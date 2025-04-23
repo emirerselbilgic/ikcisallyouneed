@@ -1,24 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# İKÇÜ AI Hackathon Projesi
 
-## Getting Started
+İzmir Katip Çelebi Üniversitesi yapay zeka hackathonu için geliştirilen proje web sitesi.
 
-First, run the development server:
+## Özellikler
 
+- Modern, animasyonlu kullanıcı arayüzü
+- Tamamen responsive tasarım
+- Ekip tanıtım sayfası
+- Proje detayları sayfası
+- Framer Motion animasyonları
+
+## Gereksinimler
+
+- Node.js 18.0.0 veya daha yüksek
+- npm veya yarn
+
+## Kurulum
+
+1. Projeyi klonlayın:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [repo-url]
+cd ikcisallyouneed
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Bağımlılıkları yükleyin:
+```bash
+npm install
+# veya
+yarn install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Geliştirme sunucusunu başlatın:
+```bash
+npm run dev
+# veya
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Tarayıcınızda [http://localhost:3000](http://localhost:3000) adresini açın
+
+## Görsel İçerikleri Eklemek
+
+Aşağıdaki görselleri `public` klasörüne eklemeniz gerekmektedir:
+
+- `team-member-1.png`
+- `team-member-2.png`
+- `team-member-3.png`
+- `team-member-4.png`
+- `project-image.jpg`
+- `hackathon-hero.jpg`
+
+Detaylı bilgi için `src/README.md` dosyasına bakabilirsiniz.
+
+## Teknolojiler
+
+- [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+
+## Katkıda Bulunanlar
+
+- Takım Üyesi 1
+- Takım Üyesi 2
+- Takım Üyesi 3
+- Takım Üyesi 4
+
+## Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır.
 
 ## Learn More
 
