@@ -25,54 +25,141 @@ export default function Home() {
   
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
   
-  // Create pre-populated arrays for the code snippets to avoid Array.fill() issues
-  const randomCodeSnippets = Array.from({ length: 100 }, () => 
-    Math.random().toString(36).substring(2, 15)
-  );
-  
-  const teamMembers = [
-    {
-      name: "Emir Ersel Bilgiç",
-      role: "Yapay Zeka Mühendisi",
-      description: "Derin öğrenme ve makine öğrenmesi konusunda uzmanlık.",
-      image: "/team-member-1.png",
-      skills: ["Python", "TensorFlow", "PyTorch", "NLP"]
-    },
-    {
-      name: "Emir Çil",
-      role: "Frontend Geliştirici",
-      description: "Modern web teknolojileri ve kullanıcı deneyimi tasarımı.",
-      image: "/emircil.jpeg",
-      skills: ["React", "JavaScript", "Tailwind CSS", "UI/UX"]
-    },
-    {
-      name: "Mustafa Ayanoğlu",
-      role: "Backend Geliştirici",
-      description: "Veritabanı yönetimi ve API geliştirme.",
-      image: "/team-member-3.png",
-      skills: ["Node.js", "Express", "SQL", "MongoDB"]
-    },
-    {
-      name: "Batu Arıbakır",
-      role: "Proje Yöneticisi",
-      description: "Proje planlaması ve ekip koordinasyonu.",
-      image: "/team-member-4.png",
-      skills: ["Agile", "Scrum", "JIRA", "Git/GitHub"]
-    },
+  // Use fixed code snippets instead of random ones to avoid hydration errors
+  const codeSnippets = [
+    'import React from "react";',
+    'function HelloWorld() {',
+    '  return <h1>Hello!</h1>;',
+    '}',
+    'export default HelloWorld;',
+    'const apiCall = async () => {',
+    '  const response = await fetch("/api");',
+    '  return response.json();',
+    '};',
+    'class DataProcessor {',
+    '  constructor(data) {',
+    '    this.data = data;',
+    '  }',
+    '  process() {',
+    '    return this.data.map(item => item * 2);',
+    '  }',
+    '}',
+    'const neurons = new NeuralNetwork();',
+    'neurons.train(trainingData);',
+    'const prediction = neurons.predict(input);',
+    'async function fetchData() {',
+    '  try {',
+    '    const data = await apiClient.get();',
+    '    return data;',
+    '  } catch (err) {',
+    '    console.error(err);',
+    '  }',
+    '}',
+    // More realistic code snippets
+    'import { useState, useEffect } from "react";',
+    'const [data, setData] = useState([]);',
+    'useEffect(() => {',
+    '  fetchData().then(setData);',
+    '}, []);',
+    'const handleSubmit = (e) => {',
+    '  e.preventDefault();',
+    '  saveData(formData);',
+    '};',
+    'function createModel() {',
+    '  const model = tf.sequential();',
+    '  model.add(tf.layers.dense({units: 1, inputShape: [1]}));',
+    '  model.compile({optimizer: "sgd", loss: "meanSquaredError"});',
+    '  return model;',
+    '}',
+    'const trainModel = async (model, xs, ys) => {',
+    '  return await model.fit(xs, ys, {epochs: 250});',
+    '};',
+    'class NeuralNetwork {',
+    '  constructor(inputNodes, hiddenNodes, outputNodes) {',
+    '    this.inputNodes = inputNodes;',
+    '    this.hiddenNodes = hiddenNodes;',
+    '    this.outputNodes = outputNodes;',
+    '    this.weightsIH = new Matrix(hiddenNodes, inputNodes);',
+    '    this.weightsHO = new Matrix(outputNodes, hiddenNodes);',
+    '    this.weightsIH.randomize();',
+    '    this.weightsHO.randomize();',
+    '  }',
+    '}',
+    'function preprocessData(data) {',
+    '  return data.filter(item => item !== null)',
+    '    .map(item => ({',
+    '      ...item,',
+    '      processed: true,',
+    '      timestamp: new Date().toISOString()',
+    '    }));',
+    '}',
+    'const calculateAccuracy = (predictions, actual) => {',
+    '  let correct = 0;',
+    '  for (let i = 0; i < predictions.length; i++) {',
+    '    if (predictions[i] === actual[i]) correct++;',
+    '  }',
+    '  return correct / predictions.length;',
+    '};',
+    'export const getStaticProps = async () => {',
+    '  const res = await fetch("https://api.example.com/data");',
+    '  const data = await res.json();',
+    '  return { props: { data } };',
+    '};',
+    'const handleImageUpload = async (file) => {',
+    '  const formData = new FormData();',
+    '  formData.append("image", file);',
+    '  const response = await fetch("/api/upload", {',
+    '    method: "POST",',
+    '    body: formData',
+    '  });',
+    '  return response.json();',
+    '};',
+    'function backPropagation(targets, outputs, hiddens) {',
+    '  const outputErrors = targets.subtract(outputs);',
+    '  const hiddenErrors = this.weightsHO.transpose().multiply(outputErrors);',
+    '  this.weightsHO.adjust(outputErrors, hiddens);',
+    '  this.weightsIH.adjust(hiddenErrors, inputs);',
+    '};',
+    'type User = {',
+    '  id: string;',
+    '  name: string;',
+    '  email: string;',
+    '  isAdmin: boolean;',
+    '};',
+    'interface MLModel {',
+    '  train(data: number[][]): void;',
+    '  predict(input: number[]): number;',
+    '  evaluate(testData: number[][]): Metrics;',
+    '}',
+    'const encryptData = (data, key) => {',
+    '  return crypto.subtle.encrypt(',
+    '    { name: "AES-GCM", iv: new Uint8Array(12) },',
+    '    key,',
+    '    new TextEncoder().encode(JSON.stringify(data))',
+    '  );',
+    '}',
+    'const gradientDescent = (points, learningRate, iterations) => {',
+    '  let m = 0, b = 0;',
+    '  for (let i = 0; i < iterations; i++) {',
+    '    let mGradient = 0, bGradient = 0;',
+    '    for (const point of points) {',
+    '      const prediction = m * point.x + b;',
+    '      mGradient += -2 * point.x * (point.y - prediction);',
+    '      bGradient += -2 * (point.y - prediction);',
+    '    }',
+    '    m -= (mGradient / points.length) * learningRate;',
+    '    b -= (bGradient / points.length) * learningRate;',
+    '  }',
+    '  return { slope: m, intercept: b };',
+    '};'
   ];
+  
 
   const techs = [
     { name: "Derin Öğrenme", icon: "🧠", color: "from-fuchsia-600 to-purple-600" },
     { name: "Doğal Dil İşleme", icon: "💬", color: "from-purple-600 to-blue-600" },
     { name: "Bilgisayarlı Görü", icon: "👁️", color: "from-blue-600 to-cyan-600" },
     { name: "Veri Analizi", icon: "📊", color: "from-cyan-600 to-emerald-600" }
-  ];
-
-  const interactiveCards = [
-    { text: "Veri Analizi", color: "bg-fuchsia-700" },
-    { text: "Yapay Zeka", color: "bg-purple-700" },
-    { text: "Makine Öğrenmesi", color: "bg-blue-700" },
-    { text: "İnovasyon", color: "bg-cyan-700" }
   ];
 
   const codeString = `
@@ -109,19 +196,19 @@ project.execute(); // Let's win this!
 
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute left-0 top-0 h-screen w-1/2 opacity-10">
-            <pre className="text-xs text-[#6e7681] leading-4 overflow-hidden font-[family-name:var(--font-geist-mono)]">
-              {randomCodeSnippets.map((_, i) => (
+            <pre className="text-xs text-gray leading-4 overflow-hidden font-[family-name:var(--font-geist-mono)]">
+              {codeSnippets.map((snippet, i) => (
                 <div key={i} className="opacity-50">
-                  {_}
+                  {snippet}
                 </div>
               ))}
             </pre>
           </div>
           <div className="absolute right-0 top-0 h-screen w-1/2 opacity-10">
-            <pre className="text-xs text-[#6e7681] leading-4 overflow-hidden text-right font-[family-name:var(--font-geist-mono)]">
-              {randomCodeSnippets.map((_, i) => (
+            <pre className="text-xs text-gray leading-4 overflow-hidden text-right font-[family-name:var(--font-geist-mono)]">
+              {codeSnippets.map((snippet, i) => (
                 <div key={i} className="opacity-50">
-                  {_}
+                  {snippet}
                 </div>
               ))}
             </pre>
@@ -163,7 +250,7 @@ project.execute(); // Let's win this!
             className="text-lg text-[#8b949e] mb-12 max-w-2xl mx-auto font-[family-name:var(--font-geist-mono)]"
           >
             Kod tutkunlarından oluşan ekibimiz, İzmir Katip Çelebi Üniversitesi yapay zeka hackathonunda 
-            yenilikçi çözümler geliştiriyor. Teknoloji stack'imiz ve projemiz ile tanışın.
+            yenilikçi çözümler geliştiriyor. Teknoloji stack&apos;imiz ve projemiz ile tanışın.
           </motion.p>
 
           <motion.div
@@ -210,7 +297,7 @@ project.execute(); // Let's win this!
             <div className="flex items-center mb-6">
               <div className="h-px flex-grow bg-[#30363d]"></div>
               <h2 className="text-3xl font-bold mx-4 text-[#58a6ff] font-[family-name:var(--font-geist-mono)]">
-                <span className="text-[#e6edf3] font-[family-name:var(--font-geist-mono)]">//</span> Project.details
+                <span className="text-[#e6edf3] font-[family-name:var(--font-geist-mono)]">{"//"}</span> Project.details
               </h2>
               <div className="h-px flex-grow bg-[#30363d]"></div>
             </div>
@@ -245,7 +332,7 @@ project.execute(); // Let's win this!
                   özelleştirilmiş deneyimler sunuyoruz.
                 </p>
                 <p>
-                  İzmir Katip Çelebi Üniversitesi'nde düzenlenen bu hackathona takımımız ile katılarak, 
+                  İzmir Katip Çelebi Üniversitesi&apos;nde düzenlenen bu hackathona takımımız ile katılarak, 
                   yeteneklerimizi sergilemek ve projemizi geliştirmek için çalışıyoruz.
                 </p>
                 
@@ -284,8 +371,9 @@ const aiModel = {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="md:col-span-2"
             >
-              <div className="relative rounded-lg overflow-hidden shadow-2xl border border-[#30363d] mb-6">
-          <Image
+              <div className="relative h-full w-full rounded-xl overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1117] via-transparent to-transparent z-10" />
+                <Image
                   src="/project-image.jpg"
                   alt="Proje Görseli"
                   width={600}
@@ -383,7 +471,7 @@ const aiModel = {
         transition={{ delay: 0.3, duration: 0.8 }}
         className="text-lg text-gray-400 max-w-2xl mx-auto mb-10"
       >
-        Yarışmada "IKC is All You Need!" takımı olarak en iyi proje sunumunu yaparak
+        Yarışmada &quot;IKC is All You Need!&quot; takımı olarak en iyi proje sunumunu yaparak
         birinci olmayı hedefliyoruz.
       </motion.p>
 

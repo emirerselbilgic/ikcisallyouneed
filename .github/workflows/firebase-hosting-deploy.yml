@@ -1,3 +1,5 @@
+# Main deployment workflow for Firebase Hosting
+# This is the primary workflow that handles deployments to production
 name: Deploy to Firebase Hosting
 
 on:

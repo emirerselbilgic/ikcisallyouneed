@@ -133,7 +133,7 @@ export default function TeamSection() {
           <div className="flex items-center mb-6">
             <div className="h-px flex-grow bg-[#30363d]"></div>
             <h2 className="text-3xl font-bold mx-4 text-[#58a6ff] font-[family-name:var(--font-geist-mono)]">
-              <span className="text-[#e6edf3] font-[family-name:var(--font-geist-mono)]">//</span> Team.members
+              <span className="text-[#e6edf3] font-[family-name:var(--font-geist-mono)]">{"//"}</span> Team.members
             </h2>
             <div className="h-px flex-grow bg-[#30363d]"></div>
           </div>
@@ -233,7 +233,7 @@ export default function TeamSection() {
         
         <div className="mt-8 text-center">
           <p className="text-[#8b949e] text-sm font-[family-name:var(--font-geist-mono)]">
-            <code>// Kaydırmak için oklarını kullanın veya sayfalara tıklayın</code>
+            <code>{"//"} Kaydırmak için oklarını kullanın veya sayfalara tıklayın</code>
           </p>
         </div>
       </div>
