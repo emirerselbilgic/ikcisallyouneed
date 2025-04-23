@@ -185,7 +185,7 @@ project.execute(); // Let's win this!
   return (
     <div ref={containerRef} className="bg-[#0d1117] text-white overflow-x-hidden font-[family-name:var(--font-geist-mono)]">
       {/* Hero Section with Parallax */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16">
+      <section className="relative flex items-center justify-center overflow-hidden pt-16">
         <motion.div 
           className="absolute inset-0 z-0"
           style={{ y: backgroundY }}
@@ -217,7 +217,7 @@ project.execute(); // Let's win this!
 
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
 
-          <div className="mt-20 mb-10 font-bold">
+          <div className="mt-10 mb-10 font-bold">
             <div className="inline-block relative">
               <span className="text-5xl md:text-7xl text-[#58a6ff] relative z-10 font-[family-name:var(--font-geist-mono)] whitespace-nowrap">
                 <span className="text-white font-[family-name:var(--font-geist-mono)]">&lt;</span>
@@ -257,7 +257,7 @@ project.execute(); // Let's win this!
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="flex flex-wrap justify-center gap-4 mb-20"
+            className="flex flex-wrap justify-center gap-4"
           >
             <a 
               href="#proje"
