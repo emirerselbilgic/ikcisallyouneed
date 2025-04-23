@@ -215,10 +215,9 @@ project.execute(); // Let's win this!
           </div>
         </div>
 
-        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-
-          <div className="mt-10 mb-10 font-bold">
-            <div className="inline-block relative">
+        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto flex flex-col items-center justify-center min-h-[85vh]">
+          <div className="mb-10 font-bold">
+            <div className="inline-block text-center">
               <span className="text-5xl md:text-7xl text-[#58a6ff] relative z-10 font-[family-name:var(--font-geist-mono)] whitespace-nowrap">
                 <span className="text-white font-[family-name:var(--font-geist-mono)]">&lt;</span>
                 <span className="text-[#58a6ff] font-[family-name:var(--font-geist-mono)]">{typedText}</span>
@@ -257,7 +256,7 @@ project.execute(); // Let's win this!
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="flex flex-wrap justify-center gap-4"
+            className="flex flex-wrap justify-center gap-4 mb-8"
           >
             <a 
               href="#proje"
