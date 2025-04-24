@@ -227,13 +227,13 @@ project.execute(); // Let's win this!
         </div>
 
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto flex flex-col items-center justify-center min-h-[85vh] pointer-events-auto">
-          <div className="mb-10 font-bold">
+          <div className="mb-8 md:mb-10 font-bold">
             <div className="inline-block text-center">
-              <span className="text-5xl md:text-7xl text-[#58a6ff] relative z-10 font-[family-name:var(--font-geist-mono)] whitespace-nowrap">
+              <span className="text-3xl sm:text-5xl md:text-7xl text-[#58a6ff] relative z-10 font-[family-name:var(--font-geist-mono)] whitespace-nowrap">
                 <span className="text-white font-[family-name:var(--font-geist-mono)]">&lt;</span>
                 <span className="text-[#58a6ff] font-[family-name:var(--font-geist-mono)]">{typedText}</span>
                 <span className="text-white font-[family-name:var(--font-geist-mono)]">/&gt;</span>
-                <span className="animate-blink inline-block w-[3px] ml-1 h-10 bg-[#58a6ff]" style={{ visibility: typedText.length === fullText.length ? 'visible' : 'hidden' }}></span>
+                <span className="animate-blink inline-block w-[3px] ml-1 h-6 md:h-10 bg-[#58a6ff]" style={{ visibility: typedText.length === fullText.length ? 'visible' : 'hidden' }}></span>
               </span>
               <div className="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-[#0d1117] via-transparent to-[#0d1117] opacity-20"></div>
             </div>
@@ -243,7 +243,7 @@ project.execute(); // Let's win this!
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.6 }}
-            className="relative bg-[#161b22] rounded-lg border border-[#30363d] shadow-xl p-5 mb-10 max-w-2xl mx-auto text-left"
+            className="relative bg-[#161b22] rounded-lg border border-[#30363d] shadow-xl p-3 md:p-5 mb-6 md:mb-10 w-full max-w-2xl mx-auto text-left"
           >
             <div className="flex mb-2">
               <div className="w-3 h-3 rounded-full bg-[#ff5f56] mr-2"></div>
@@ -257,24 +257,24 @@ project.execute(); // Let's win this!
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-lg text-[#8b949e] mb-12 max-w-2xl mx-auto font-[family-name:var(--font-geist-mono)]"
+            className="text-base md:text-lg text-[#8b949e] mb-8 md:mb-12 max-w-2xl mx-auto font-[family-name:var(--font-geist-mono)]"
           >
             Kod tutkunlarından oluşan ekibimiz, İzmir Katip Çelebi Üniversitesi yapay zeka hackathonunda 
             yenilikçi çözümler geliştiriyor. Teknoloji ekibimiz ve projemiz ile tanışın.
           </motion.p>
 
           <div
-            className="flex flex-wrap justify-center gap-4 mb-8 relative z-30"
+            className="flex flex-wrap justify-center gap-3 md:gap-4 mb-8 relative z-30"
           >
             <button 
               onClick={() => {
                 const element = document.getElementById('proje');
                 element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }}
-              className="px-6 py-2 bg-[#238636] text-white rounded-md hover:bg-[#2ea043] transition-colors flex items-center font-[family-name:var(--font-geist-mono)] cursor-pointer"
+              className="px-4 md:px-6 py-2 bg-[#238636] text-white rounded-md hover:bg-[#2ea043] transition-colors flex items-center font-[family-name:var(--font-geist-mono)] cursor-pointer text-sm md:text-base"
               type="button"
             >
-              <svg className="w-5 h-5 mr-2" viewBox="0 0 16 16" fill="currentColor">
+              <svg className="w-4 h-4 md:w-5 md:h-5 mr-2" viewBox="0 0 16 16" fill="currentColor">
                 <path fillRule="evenodd" d="M11.4 8L6.7 3.3a1 1 0 0 1 1.4-1.4l5.6 5.6a1 1 0 0 1 0 1.4l-5.6 5.6a1 1 0 0 1-1.4-1.4L11.4 8z"/>
               </svg>
               <code>project.explore()</code>
@@ -284,10 +284,10 @@ project.execute(); // Let's win this!
                 const element = document.getElementById('ekip');
                 element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }}
-              className="px-6 py-2 bg-transparent border border-[#6e7681] text-white rounded-md hover:bg-[#30363d] transition-colors flex items-center font-[family-name:var(--font-geist-mono)] cursor-pointer"
+              className="px-4 md:px-6 py-2 bg-transparent border border-[#6e7681] text-white rounded-md hover:bg-[#30363d] transition-colors flex items-center font-[family-name:var(--font-geist-mono)] cursor-pointer text-sm md:text-base"
               type="button"
             >
-              <svg className="w-5 h-5 mr-2" viewBox="0 0 16 16" fill="currentColor">
+              <svg className="w-4 h-4 md:w-5 md:h-5 mr-2" viewBox="0 0 16 16" fill="currentColor">
                 <path fillRule="evenodd" d="M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.5 1.5 0 01.666 2.844.75.75 0 00-.416.672v.352a.75.75 0 00.574.73c1.2.289 2.162 1.2 2.522 2.372a.75.75 0 101.434-.44 5.01 5.01 0 00-2.56-3.012A3 3 0 0011 4z"/>
               </svg>
               <code>team.members</code>
@@ -302,7 +302,7 @@ project.execute(); // Let's win this!
       <TeamSection />
 
       {/* Project Section */}
-      <section id="proje" className="py-20 px-4 relative border-t border-[#30363d] mt-16">
+      <section id="proje" className="py-16 md:py-20 px-4 relative border-t border-[#30363d] mt-16">
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10" />
         <div className="max-w-6xl mx-auto relative z-10">
           <motion.div 
@@ -310,29 +310,29 @@ project.execute(); // Let's win this!
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-16"
+            className="mb-12 md:mb-16"
           >
-            <div className="flex items-center mb-6">
+            <div className="flex items-center mb-4 md:mb-6">
               <div className="h-px flex-grow bg-[#30363d]"></div>
-              <h2 className="text-3xl font-bold mx-4 text-[#58a6ff] font-[family-name:var(--font-geist-mono)]">
+              <h2 className="text-2xl md:text-3xl font-bold mx-2 md:mx-4 text-[#58a6ff] font-[family-name:var(--font-geist-mono)]">
                 <span className="text-[#e6edf3] font-[family-name:var(--font-geist-mono)]">{"//"}</span> Project.details
               </h2>
               <div className="h-px flex-grow bg-[#30363d]"></div>
             </div>
-            <p className="text-xl text-[#8b949e] max-w-3xl mx-auto text-center font-[family-name:var(--font-geist-mono)]">
+            <p className="text-lg md:text-xl text-[#8b949e] max-w-3xl mx-auto text-center font-[family-name:var(--font-geist-mono)]">
               Yapay zeka teknolojileri ile geliştirdiğimiz inovatif çözümümüz
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-start mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8 items-start mb-16 md:mb-20">
             {/* Left Column - Project Goal and Abstract */}
-            <div className="md:col-span-3 space-y-8">
+            <div className="md:col-span-3 space-y-6 md:space-y-8">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="bg-[#161b22] rounded-lg border border-[#30363d] p-6 shadow-lg"
+                className="bg-[#161b22] rounded-lg border border-[#30363d] p-4 md:p-6 shadow-lg"
           >
                 <div className="flex items-center mb-4">
                   <div className="w-3 h-3 rounded-full bg-[#ff5f56] mr-2"></div>
@@ -342,9 +342,9 @@ project.execute(); // Let's win this!
                 </div>
 
                 
-                <div className="text-[#8b949e] space-y-4 markdown-content font-[family-name:var(--font-geist-mono)]">
-                <div className="mt-6">
-                    <h4 className="text-xl font-semibold text-[#e6edf3] mb-2 font-[family-name:var(--font-geist-mono)]">Amaç:</h4>
+                <div className="text-[#8b949e] space-y-4 markdown-content font-[family-name:var(--font-geist-mono)] text-sm md:text-base">
+                <div className="mt-4 md:mt-6">
+                    <h4 className="text-lg md:text-xl font-semibold text-[#e6edf3] mb-2 font-[family-name:var(--font-geist-mono)]">Amaç:</h4>
                     <p>Göğüs röntgen görüntülerinden pnömoni gibi akciğer hastalıklarını otomatik olarak tanılayabilen, kararlarını açıklayabilen ve bu çıktıları anlamlı bir klinik rapor haline getirebilen yapay zeka sistemleri geliştirmektir.</p>
                   </div>
                   <p>
@@ -358,7 +358,7 @@ project.execute(); // Let's win this!
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="bg-[#161b22] rounded-lg border border-[#30363d] p-6 shadow-lg"
+                className="bg-[#161b22] rounded-lg border border-[#30363d] p-4 md:p-6 shadow-lg"
           >
                 <div className="flex items-center mb-4">
                   <div className="w-3 h-3 rounded-full bg-[#ff5f56] mr-2"></div>
@@ -367,9 +367,9 @@ project.execute(); // Let's win this!
                   <span className="text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)]">project-abstract.md</span>
                 </div>
 
-                <div className="text-[#8b949e] space-y-4 markdown-content font-[family-name:var(--font-geist-mono)]">
-                <div className="mt-6">
-                    <h4 className="text-xl font-semibold text-[#e6edf3] mb-2 font-[family-name:var(--font-geist-mono)]">Project Report Abstract:</h4>
+                <div className="text-[#8b949e] space-y-4 markdown-content font-[family-name:var(--font-geist-mono)] text-sm md:text-base">
+                <div className="mt-4 md:mt-6">
+                    <h4 className="text-lg md:text-xl font-semibold text-[#e6edf3] mb-2 font-[family-name:var(--font-geist-mono)]">Project Report Abstract:</h4>
                     <p>Chest radiographs are among the most widely used imaging techniques in the evaluation of pneumonia conditions. In recent years, the interpretation of these images has increasingly involved the use of computer-aided diagnosis (CAD) systems, which aim to improve diagnostic accuracy and minimize inter-observer variability. This study proposes a deep learning-based approach for the automatic pneumonia classification of chest X-ray. Therefore, various CNN architectures and ViT models have been trained to detect anatomical differences and categorize the images into frontal views. Among the fine-tuned models using transfer learning, ShuffleNet V2 x1.0 and  EfficientNet-B0 yielded the best results on the Chest X-Ray Images (Pneumonia) dataset. The training process was conducted using the Adam optimization algorithm and the cross-entropy loss function. Evaluation metrics such as accuracy, sensitivity, specificity, and F1-score demonstrated the effectiveness of the proposed model in projection classification tasks.</p>
                   </div>
                   <p>
@@ -434,7 +434,7 @@ project.execute(); // Let's win this!
       </section>
 
       {/* Results Section */}
-      <section id="results" className="py-20 px-4 relative border-t border-[#30363d] mt-16">
+      <section id="results" className="py-16 md:py-20 px-4 relative border-t border-[#30363d] mt-16">
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10" />
         <div className="max-w-6xl mx-auto relative z-10">
           {/* Section Header */}
@@ -443,16 +443,16 @@ project.execute(); // Let's win this!
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-16"
+            className="mb-12 md:mb-16"
           >
-            <div className="flex items-center mb-6">
+            <div className="flex items-center mb-4 md:mb-6">
               <div className="h-px flex-grow bg-[#30363d]"></div>
-              <h2 className="text-3xl font-bold mx-4 text-[#58a6ff] font-[family-name:var(--font-geist-mono)]">
+              <h2 className="text-2xl md:text-3xl font-bold mx-2 md:mx-4 text-[#58a6ff] font-[family-name:var(--font-geist-mono)]">
                 <span className="text-[#e6edf3] font-[family-name:var(--font-geist-mono)]">{"//"}</span> Hackathon.results
               </h2>
               <div className="h-px flex-grow bg-[#30363d]"></div>
             </div>
-            <p className="text-xl text-[#8b949e] max-w-3xl mx-auto text-center font-[family-name:var(--font-geist-mono)]">
+            <p className="text-lg md:text-xl text-[#8b949e] max-w-3xl mx-auto text-center font-[family-name:var(--font-geist-mono)]">
               Göğüs röntgenlerinden pnömoni analizi için geliştirdiğimiz çözümlerin sonuçları
             </p>
           </motion.div>
@@ -463,7 +463,7 @@ project.execute(); // Let's win this!
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-16 bg-[#161b22] rounded-lg border border-[#30363d] p-6 shadow-lg"
+            className="mb-12 md:mb-16 bg-[#161b22] rounded-lg border border-[#30363d] p-4 md:p-6 shadow-lg"
           >
             <div className="flex items-center mb-4">
                 <div className="w-3 h-3 rounded-full bg-[#ff5f56] mr-2"></div>
@@ -471,15 +471,15 @@ project.execute(); // Let's win this!
                 <div className="w-3 h-3 rounded-full bg-[#27c93f] mr-4"></div>
                 <span className="text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)]">task-1.md</span>
               </div>
-            <h3 className="text-2xl font-bold mb-4 text-[#e6edf3] font-[family-name:var(--font-geist-mono)] flex items-center">
+            <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[#e6edf3] font-[family-name:var(--font-geist-mono)] flex items-center">
               <span className="text-[#58a6ff] mr-2">1.</span> Görev: Hastalık Sınıflandırması
             </h3>
-            <p className="text-[#8b949e] mb-6 font-[family-name:var(--font-geist-mono)]">
+            <p className="text-sm md:text-base text-[#8b949e] mb-4 md:mb-6 font-[family-name:var(--font-geist-mono)]">
               Amaç: Göğüs röntgeni görüntülerini otomatik olarak NORMAL veya PNÖMONİ olarak sınıflandırmak. Bu görev için <code className="bg-[#0d1117] px-1 py-0.5 rounded text-sm text-amber-400">ShuffleNet V2 x1.0</code> ve <code className="bg-[#0d1117] px-1 py-0.5 rounded text-sm text-amber-400">EfficientNet-B0</code> modelleri kullanıldı. Görüntüler yeniden boyutlandırıldı, normalize edildi ve veri artırımı (örn. yatay çevirme, döndürme) uygulandı.
             </p>
               <h4 className="text-md font-semibold text-[#e6edf3] mb-2 font-[family-name:var(--font-geist-mono)]">Kullanılan Hiperparametreler:</h4>
-            <div className="mb-6 bg-[#0d1117] p-4 rounded-md overflow-x-auto border border-[#30363d]">
-              <pre className="text-sm font-[family-name:var(--font-geist-mono)] text-[#8b949e]"><code>{`# Hyperparameters
+            <div className="mb-6 bg-[#0d1117] p-3 md:p-4 rounded-md overflow-x-auto border border-[#30363d]">
+              <pre className="text-xs md:text-sm font-[family-name:var(--font-geist-mono)] text-[#8b949e]"><code>{`# Hyperparameters
 batch_size = 32
 num_epochs = 20
 learning_rate = 0.001
@@ -494,25 +494,25 @@ models = [
             <h4 className="text-md font-semibold text-[#e6edf3] mb-3 font-[family-name:var(--font-geist-mono)]">Performans Metrikleri (Test Seti):</h4>
             {/* Updated Metrics Table */}
             <div className="overflow-x-auto bg-[#0d1117] rounded-lg border border-[#30363d]">
-              <table className="min-w-full text-sm font-[family-name:var(--font-geist-mono)]">
+              <table className="min-w-full text-xs md:text-sm font-[family-name:var(--font-geist-mono)]">
                 <thead className="bg-[#161b22] text-left text-[#8b949e]">
                   <tr>
-                    <th className="px-4 py-2 font-semibold">Model - Original</th>
-                    <th className="px-4 py-2 font-semibold text-center">Train Accuracy</th>
-                    <th className="px-4 py-2 font-semibold text-center">Validation Accuracy</th>
-                    <th className="px-4 py-2 font-semibold text-center">Precision</th>
-                    <th className="px-4 py-2 font-semibold text-center">Recall</th>
-                    <th className="px-4 py-2 font-semibold text-center">F1-Score</th>
-                    <th className="px-4 py-2 font-semibold text-center">ROC-AUC</th>
-                    <th className="px-4 py-2 font-semibold text-center">IOU</th>
+                    <th className="px-2 md:px-4 py-2 font-semibold">Model</th>
+                    <th className="px-2 md:px-4 py-2 font-semibold text-center">Train</th>
+                    <th className="px-2 md:px-4 py-2 font-semibold text-center">Val</th>
+                    <th className="px-2 md:px-4 py-2 font-semibold text-center">Precision</th>
+                    <th className="px-2 md:px-4 py-2 font-semibold text-center">Recall</th>
+                    <th className="px-2 md:px-4 py-2 font-semibold text-center">F1</th>
+                    <th className="px-2 md:px-4 py-2 font-semibold text-center hidden md:table-cell">ROC-AUC</th>
+                    <th className="px-2 md:px-4 py-2 font-semibold text-center hidden md:table-cell">IOU</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#30363d]">
                   <tr className="text-[#e6edf3]">
-                    <td className="px-4 py-2 font-medium">EfficientNet-B0</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.99674 </td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.875</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.889</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}
+                    <td className="px-2 md:px-4 py-2 font-medium">EfficientNet-B0</td><td className="px-2 md:px-4 py-2 text-center text-[#58a6ff]">0.99674 </td>{/* Placeholder */}<td className="px-2 md:px-4 py-2 text-center text-[#58a6ff]">0.875</td>{/* Placeholder */}<td className="px-2 md:px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}<td className="px-2 md:px-4 py-2 text-center text-[#58a6ff]">1</td>{/* Placeholder */}<td className="px-2 md:px-4 py-2 text-center text-[#58a6ff]">0.889</td>{/* Placeholder */}<td className="px-2 md:px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-2 md:px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}
                   </tr>
                   <tr className="text-[#e6edf3] bg-[#161b22]/30">
-                    <td className="px-4 py-2 font-medium">ShuffleNet V2</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.99617</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.875</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.889</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}
+                    <td className="px-2 md:px-4 py-2 font-medium">ShuffleNet V2</td><td className="px-2 md:px-4 py-2 text-center text-[#58a6ff]">0.99617</td>{/* Placeholder */}<td className="px-2 md:px-4 py-2 text-center text-[#58a6ff]">0.875</td>{/* Placeholder */}<td className="px-2 md:px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}<td className="px-2 md:px-4 py-2 text-center text-[#58a6ff]">1</td>{/* Placeholder */}<td className="px-2 md:px-4 py-2 text-center text-[#58a6ff]">0.889</td>{/* Placeholder */}<td className="px-2 md:px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-2 md:px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}
                   </tr>
                 </tbody>
               </table>
@@ -748,7 +748,7 @@ models = [
       </section>
 
       {/* PDF Presentation Section - Rendered only on client */}
-      <section id="presentation" className="py-20 px-4 relative border-t border-[#30363d]">
+      <section id="presentation" className="py-16 md:py-20 px-4 relative border-t border-[#30363d]">
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10" />
         <div className="max-w-6xl mx-auto relative z-10">
           {/* Section Header */}
@@ -757,16 +757,16 @@ models = [
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-16"
+            className="mb-10 md:mb-16"
           >
-            <div className="flex items-center mb-6">
+            <div className="flex items-center mb-4 md:mb-6">
               <div className="h-px flex-grow bg-[#30363d]"></div>
-              <h2 className="text-3xl font-bold mx-4 text-[#58a6ff] font-[family-name:var(--font-geist-mono)]">
+              <h2 className="text-2xl md:text-3xl font-bold mx-2 md:mx-4 text-[#58a6ff] font-[family-name:var(--font-geist-mono)]">
                 <span className="text-[#e6edf3] font-[family-name:var(--font-geist-mono)]">{"//"}</span> Presentation.pdf
               </h2>
               <div className="h-px flex-grow bg-[#30363d]"></div>
             </div>
-             <p className="text-xl text-[#8b949e] max-w-3xl mx-auto text-center font-[family-name:var(--font-geist-mono)]">
+             <p className="text-lg md:text-xl text-[#8b949e] max-w-3xl mx-auto text-center font-[family-name:var(--font-geist-mono)]">
               Proje sunumumuz
             </p>
           </motion.div>
@@ -781,7 +781,7 @@ models = [
             >
               <iframe 
                 src="/project_pdf.pdf" 
-                className="w-full h-[70vh] md:h-[80vh] rounded"
+                className="w-full h-[50vh] md:h-[70vh] lg:h-[80vh] rounded"
                 title="Proje Sunumu PDF"
                 // Adding sandbox attribute for security, adjust as needed
                 // sandbox="allow-scripts allow-same-origin"
@@ -794,7 +794,7 @@ models = [
           )}
           {!hasMounted && (
             // Optional: Placeholder while waiting for mount
-            <div className="bg-[#161b22] rounded-lg border border-[#30363d] p-2 shadow-lg h-[70vh] md:h-[80vh] flex items-center justify-center text-[#8b949e]">
+            <div className="bg-[#161b22] rounded-lg border border-[#30363d] p-2 shadow-lg h-[50vh] md:h-[70vh] lg:h-[80vh] flex items-center justify-center text-[#8b949e]">
               Yükleniyor...
             </div>
            ) }
@@ -806,7 +806,7 @@ models = [
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.3, duration: 0.8 }}
-        className="text-lg text-gray-400 max-w-2xl mx-auto mb-10"
+        className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-8 md:mb-10 px-4 text-center"
       >
         Yarışmada &quot;IKC is All You Need!&quot; takımı olarak en iyi proje sunumunu yaparak
         birinci olmayı hedefliyoruz.
@@ -814,26 +814,78 @@ models = [
 
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 py-4 px-6 backdrop-blur-md bg-black/30">
+      <nav className="fixed top-0 left-0 right-0 z-50 py-3 md:py-4 px-4 md:px-6 backdrop-blur-md bg-black/30">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <a href="#" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400 whitespace-nowrap">
+          <a href="#" className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400 whitespace-nowrap">
             IKC is All You Need!
           </a>
           
-          <div className="flex gap-8">
+          <div className="hidden md:flex gap-8">
             <a href="#proje" onClick={(e) => handleScroll(e, 'proje')} className="text-gray-300 hover:text-white transition-colors">Proje</a>
             <a href="#ekip" onClick={(e) => handleScroll(e, 'ekip')} className="text-gray-300 hover:text-white transition-colors">Ekip</a>
             <a href="#results" onClick={(e) => handleScroll(e, 'results')} className="text-gray-300 hover:text-white transition-colors">Sonuçlar</a>
+          </div>
+          
+          <div className="flex md:hidden">
+            <button 
+              onClick={() => {
+                const menu = document.getElementById('mobile-menu');
+                if (menu) {
+                  menu.classList.toggle('hidden');
+                }
+              }} 
+              className="text-gray-300 hover:text-white focus:outline-none"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        
+        {/* Mobile menu */}
+        <div id="mobile-menu" className="hidden md:hidden absolute top-full left-0 right-0 bg-black/90 backdrop-blur-md border-b border-gray-800">
+          <div className="px-4 py-4 space-y-3">
+            <a 
+              href="#proje" 
+              onClick={(e) => {
+                handleScroll(e, 'proje');
+                document.getElementById('mobile-menu')?.classList.add('hidden');
+              }} 
+              className="block text-gray-300 hover:text-white transition-colors"
+            >
+              Proje
+            </a>
+            <a 
+              href="#ekip" 
+              onClick={(e) => {
+                handleScroll(e, 'ekip');
+                document.getElementById('mobile-menu')?.classList.add('hidden');
+              }} 
+              className="block text-gray-300 hover:text-white transition-colors"
+            >
+              Ekip
+            </a>
+            <a 
+              href="#results" 
+              onClick={(e) => {
+                handleScroll(e, 'results');
+                document.getElementById('mobile-menu')?.classList.add('hidden');
+              }} 
+              className="block text-gray-300 hover:text-white transition-colors"
+            >
+              Sonuçlar
+            </a>
           </div>
         </div>
       </nav>
 
       {/* Footer */}
-      <footer className="bg-black py-12 px-4 border-t border-gray-900">
+      <footer className="bg-black py-8 md:py-12 px-4 border-t border-gray-900">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="text-gray-500 mb-4">© 2025 IKC is All You Need! - İzmir Katip Çelebi Üniversitesi AI Hackathon Takımı</p>
+          <p className="text-sm md:text-base text-gray-500 mb-4">© 2025 IKC is All You Need! - İzmir Katip Çelebi Üniversitesi AI Hackathon Takımı</p>
           <p className="text-purple-500">
-            <a href="#" className="hover:text-purple-400 transition-colors">İletişim</a>
+            <a href="#" className="text-sm md:text-base hover:text-purple-400 transition-colors">İletişim</a>
           </p>
         </div>
       </footer>
