@@ -12,21 +12,21 @@ export default function TeamSection() {
     {
       name: "Emir Ersel Bilgiç",
       role: "Yapay Zeka Mühendisi",
-      description: "Derin öğrenme ve makine öğrenmesi konusunda uzmanlık sahibi. Doğal dil işleme ve bilgisayarlı görü projelerinde deneyimli.",
-      image: "/team-member-1.png",
+      description: "Electrical and Electronics Engineering student with experience in AI, deep learning, web and mobile app development through research projects and an AI engineering internship,",
+      image: "/emirersel.png",
       cv: {
         education: [
-          "Bilgisayar Mühendisliği, İzmir Katip Çelebi Üniversitesi, 2022",
-          "Veri Bilimi Sertifikası, 2021"
+          "Elektrik-Elektronik Mühendisliği, İzmir Katip Çelebi Üniversitesi, 2020",
         ],
-        skills: ["Python", "TensorFlow", "PyTorch", "NLP", "Computer Vision"],
         experience: [
-          "Yapay Zeka Stajyeri, XYZ Tech, 2021-2022",
-          "Veri Bilimci, ABC Company, 2022-Günümüz"
+          "Intern Artificial Intelligence Engineer, Onur Enerji, 2024",
+          "Intern Electrical & Electronics Engineer, Arkas Otomotiv, 2024"
         ],
         projects: [
-          "Duygu analizi modeli geliştirme",
-          "Nesne tanıma sistemi implementasyonu"
+          "Research Paper - Latin America 8th International Conference on Scientific Researches - CONTINUAL DEEP LEARNING BASED GLUCOSE PREDICTION FOR DIABETES MANAGEMENT",
+          "Research Paper - Latin America 8th International Conference on Scientific Researches - GLUCAST: DEEP LEARNING BASED SMARTPHONE APPLICATION FOR PERSONALIZED GLUCOSE PREDICTION",
+          "TUBITAK 2209B - Artificial Intelligence-Based Energy Demand Forecasting and Anomaly Detection for Energy Efficiency Optimization",
+          "Scholarship Holder - Development of an AI-Assisted Wearable Sensor System for Minimally Invasive Colorimetric Measurement of Critical Exercise Biomarkers for Personalized Sport"
         ]
       }
     },
@@ -40,7 +40,6 @@ export default function TeamSection() {
           "Web Tasarımı ve Geliştirme, İzmir Katip Çelebi Üniversitesi, 2021",
           "UI/UX Tasarım Sertifikası, 2020"
         ],
-        skills: ["React", "Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "Framer Motion"],
         experience: [
           "Frontend Geliştirici, Tech Startup, 2020-2022",
           "UI Tasarımcısı, Design Agency, 2022-Günümüz"
@@ -55,13 +54,12 @@ export default function TeamSection() {
       name: "Mustafa Ayanoğlu",
       role: "Backend Geliştirici",
       description: "Veritabanı yönetimi ve API geliştirme konusunda uzman. Ölçeklenebilir ve güvenli backend mimarileri tasarlama.",
-      image: "/team-member-3.png",
+      image: "/mustafa.jpeg",
       cv: {
         education: [
           "Bilgisayar Mühendisliği, İzmir Katip Çelebi Üniversitesi, 2020",
           "Veritabanı Yönetimi Sertifikası, 2019"
         ],
-        skills: ["Node.js", "Express", "MongoDB", "SQL", "GraphQL", "Docker"],
         experience: [
           "Backend Geliştirici, Enterprise Solutions, 2019-2021",
           "Sistem Mimarı, Cloud Services, 2021-Günümüz"
@@ -76,13 +74,12 @@ export default function TeamSection() {
       name: "Batu Arıbakır",
       role: "Proje Yöneticisi",
       description: "Proje planlaması ve ekip koordinasyonu konusunda deneyimli. Agile metodolojileri uygulama ve proje takibi.",
-      image: "/team-member-4.png",
+      image: "/batu.jpeg",
       cv: {
         education: [
           "İşletme Yönetimi, İzmir Katip Çelebi Üniversitesi, 2019",
           "Proje Yönetimi Sertifikası (PMP), 2020"
         ],
-        skills: ["Agile", "Scrum", "JIRA", "MS Project", "Team Leadership", "Risk Management"],
         experience: [
           "Proje Asistanı, Management Consultancy, 2018-2020",
           "Proje Yöneticisi, Tech Innovations, 2020-Günümüz"
@@ -176,22 +173,21 @@ export default function TeamSection() {
                   
                   {/* Right side - CV/Details in JSON format */}
                   <div className="w-3/5 p-6 bg-[#0d1117] overflow-y-auto">
-                    <pre className="text-sm text-[#e6edf3] font-[family-name:var(--font-geist-mono)]"><code>{`{
+                    <pre className="text-sm text-[#e6edf3] font-[family-name:var(--font-geist-mono)] whitespace-pre-wrap"><code>{`{
   "name": "${member.name}",
   "role": "${member.role}",
   "description": "${member.description}",
   "education": [
     "${member.cv.education[0]}",
-    "${member.cv.education[1]}"
+    "${member.cv.education[1] || ''}"
   ],
-  "skills": [${member.cv.skills.map(skill => `"${skill}"`).join(', ')}],
   "experience": [
     "${member.cv.experience[0]}",
-    "${member.cv.experience[1]}"
+    "${member.cv.experience[1] || ''}"
   ],
   "projects": [
     "${member.cv.projects[0]}",
-    "${member.cv.projects[1]}"
+    "${member.cv.projects[1] || ''}"
   ]
 }`}</code></pre>
                   </div>
