@@ -668,40 +668,67 @@ models = [
               <span className="text-[#58a6ff] mr-2">3.</span> Görev: Klinik Raporlama ve LLM Karşılaştırması
             </h3>
             <p className="text-[#8b949e] mb-6 font-[family-name:var(--font-geist-mono)]">
-              Sınıflandırma ve açıklanabilirlik sonuçlarına dayanarak otomatik oluşturulan klinik mini raporlar ve bu raporların <code className="bg-[#0d1117] px-1 py-0.5 rounded text-sm text-amber-400">Gemini Pro</code> gibi bir LLM çıktısıyla karşılaştırılması.
+              Sınıflandırma ve açıklanabilirlik sonuçlarına dayanarak otomatik oluşturulan klinik mini raporlarorlar.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Generated Report Example */}
               <div className="bg-[#0d1117] p-4 rounded-lg border border-[#30363d]">
-                <h4 className="text-lg font-semibold text-[#e6edf3] mb-2 font-[family-name:var(--font-geist-mono)]">Örnek Otomatik Rapor</h4>
-                <p className="text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)] mb-1"><strong className="text-[#e6edf3]">Tanı:</strong> Pnömoni bulguları saptanmıştır.</p>
-                <p className="text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)] mb-1"><strong className="text-[#e6edf3]">Anatomik Bölge:</strong> Sağ alt lobda belirgin opasite izlenmektedir.</p>
-                <p className="text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)]"><strong className="text-[#e6edf3]">Risk:</strong> Yüksek</p>
+                <h4 className="text-lg font-semibold text-[#e6edf3] mb-3 font-[family-name:var(--font-geist-mono)]">Otomatik Rapor</h4>
+                <div className="border border-[#30363d] rounded-lg overflow-hidden">
+                  {/* Image placeholder */}
+                  <div className="text-center py-4 border-b border-[#30363d] text-[#8b949e] bg-[#161b22]">
+                    <p className="text-sm">Image (Görüntü)</p>
+                    <p className="text-xs">(ortada üstte görüntü)</p>
+                  </div>
+                  
+                  {/* Clinical question section */}
+                  <div className="border-b border-[#30363d]">
+                    <table className="min-w-full divide-y divide-[#30363d]">
+                      <thead className="bg-[#161b22]">
+                        <tr>
+                          <th className="px-3 py-2 text-left text-xs font-medium text-[#8b949e]">Klinik Soru</th>
+                          <th className="px-3 py-2 text-left text-xs font-medium text-[#8b949e]">Cevap</th>
+                          <th className="px-3 py-2 text-left text-xs font-medium text-[#8b949e]">Güven Skoru</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="px-3 py-2 text-xs text-[#c9d1d9]">Pneumonia var mı?</td>
+                          <td className="px-3 py-2 text-xs text-[#7ee787] font-bold">Yes</td>
+                          <td className="px-3 py-2 text-xs text-[#58a6ff]">0.92</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  {/* Key information */}
+                  <div className="p-2 border-b border-[#30363d] text-xs text-[#8b949e]">
+                    <p className="mb-1"><span className="text-[#e6edf3] font-medium">Anahtar Bilgiler:</span> mass, sağ üst kadran, apikal bölge, pleural effusion, consolidation</p>
+                    <p className="mb-1"><span className="text-[#e6edf3] font-medium">Anatomik Bölge:</span> Thorax (Sağ üst kadran, apikal bölge, infiltrasyon)</p>
+                    <p><span className="text-[#e6edf3] font-medium">Lezyon Konumu:</span> Sağ üst kadran</p>
+                  </div>
+                  
+                  {/* Heat map */}
+                  <div className="p-2 border-b border-[#30363d] text-xs text-[#8b949e]">
+                    <p><span className="text-[#e6edf3] font-medium">Isı Haritası:</span> IM-0091-0001.png</p>
+                  </div>
+                  
+                  {/* Clinical comment */}
+                  <div className="p-2 border-b border-[#30363d] text-xs text-[#8b949e]">
+                    <p className="mb-1"><span className="text-[#e6edf3] font-medium">Klinik Yorum:</span></p>
+                    <p>High density area observed in the sağ üst kadran, apikal bölge, consistent with bacterial consolidation. The model identifies this as bacterial pneumonia with high confidence.</p>
+                  </div>
+                  
+                  {/* Model info */}
+                  <div className="p-2 text-xs text-[#8b949e]">
+                    <p className="mb-1"><span className="text-[#e6edf3] font-medium">Model:</span> efficientnet_b0</p>
+                    <p><span className="text-[#e6edf3] font-medium">Tarih:</span> 24/04/2025 16:01</p>
+                  </div>
+                </div>
               </div>
 
-              {/* LLM Comparison Metrics */}
-              <div className="bg-[#0d1117] p-4 rounded-lg border border-[#30363d]">
-                 <h4 className="text-lg font-semibold text-[#e6edf3] mb-3 font-[family-name:var(--font-geist-mono)]">LLM Karşılaştırma Skorları (Örnek)</h4>
-                 <div className="space-y-2">
-                   <div className="flex justify-between items-center text-sm">
-                     <span className="text-[#8b949e] font-[family-name:var(--font-geist-mono)]">BLEU:</span>
-                     <span className="text-[#58a6ff] font-bold font-[family-name:var(--font-geist-mono)]">0.65</span> {/* Placeholder */}
-                   </div>
-                   <div className="flex justify-between items-center text-sm">
-                     <span className="text-[#8b949e] font-[family-name:var(--font-geist-mono)]">ROUGE-L:</span>
-                     <span className="text-[#58a6ff] font-bold font-[family-name:var(--font-geist-mono)]">0.72</span> {/* Placeholder */}
-                   </div>
-                   <div className="flex justify-between items-center text-sm">
-                     <span className="text-[#8b949e] font-[family-name:var(--font-geist-mono)]">BERTScore (F1):</span>
-                     <span className="text-[#58a6ff] font-bold font-[family-name:var(--font-geist-mono)]">0.88</span> {/* Placeholder */}
-                   </div>
-                 </div>
-              </div>
             </div>
-             <p className="text-xs text-[#8b949e] mt-4 text-center font-[family-name:var(--font-geist-mono)]">
-              <code>{"//"} Raporlama ve karşılaştırma metrikleri örnektir (gerçek çıktılarla değiştirilecek)</code>
-            </p>
             {/* Download Link for Task 3 */}
             <div className="mt-6 text-center">
               <a 
@@ -712,7 +739,7 @@ models = [
                 <svg className="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
-                task3_clinical_report.json
+                task3_clinical_report.zip
               </a>
             </div>
           </motion.div>
