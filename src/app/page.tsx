@@ -320,62 +320,67 @@ project.execute(); // Let's win this!
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-start mb-20">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="md:col-span-3 bg-[#161b22] rounded-lg border border-[#30363d] p-6 shadow-lg"
-        >
-              <div className="flex items-center mb-4">
-                <div className="w-3 h-3 rounded-full bg-[#ff5f56] mr-2"></div>
-                <div className="w-3 h-3 rounded-full bg-[#ffbd2e] mr-2"></div>
-                <div className="w-3 h-3 rounded-full bg-[#27c93f] mr-4"></div>
-                <span className="text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)]">project-details.md</span>
-              </div>
-
-              
-              <div className="text-[#8b949e] space-y-4 markdown-content font-[family-name:var(--font-geist-mono)]">
-              <div className="mt-6">
-                  <h4 className="text-xl font-semibold text-[#e6edf3] mb-2 font-[family-name:var(--font-geist-mono)]">Amaç:</h4>
-                  <p>Göğüs röntgen görüntülerinden pnömoni gibi akciğer hastalıklarını otomatik olarak tanılayabilen, kararlarını açıklayabilen ve bu çıktıları anlamlı bir klinik rapor haline getirebilen yapay zeka sistemleri geliştirmektir.</p>
+            {/* Left Column - Project Goal and Abstract */}
+            <div className="md:col-span-3 space-y-8">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="bg-[#161b22] rounded-lg border border-[#30363d] p-6 shadow-lg"
+          >
+                <div className="flex items-center mb-4">
+                  <div className="w-3 h-3 rounded-full bg-[#ff5f56] mr-2"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#ffbd2e] mr-2"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#27c93f] mr-4"></div>
+                  <span className="text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)]">project-goal.md</span>
                 </div>
-                <p>
-                  Modelimizi eğitmek için <a href="https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia/data" target="_blank" rel="noopener noreferrer" className="text-[#58a6ff] hover:underline">Kaggle&apos;daki Pnömoni Teşhisi için Göğüs Röntgeni</a> veri setini kullandık. Bu veri seti, Guangzhou Kadın ve Çocuk Sağlığı Merkezi&apos;ndeki 1-5 yaş arası pediyatrik hastalara ait 5,863 adet Pnömoni ve Normal olarak sınıflandırılmış göğüs röntgeni (JPEG) görüntüsünden oluşmaktadır. Otomatik pnömoni tespiti için model geliştirme ve test etme amacıyla tasarlanmıştır.
-                </p>
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="md:col-span-3 bg-[#161b22] rounded-lg border border-[#30363d] p-6 shadow-lg"
-        >
-              <div className="flex items-center mb-4">
-                <div className="w-3 h-3 rounded-full bg-[#ff5f56] mr-2"></div>
-                <div className="w-3 h-3 rounded-full bg-[#ffbd2e] mr-2"></div>
-                <div className="w-3 h-3 rounded-full bg-[#27c93f] mr-4"></div>
-                <span className="text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)]">project-abstract.md</span>
-              </div>
 
-              <div className="text-[#8b949e] space-y-4 markdown-content font-[family-name:var(--font-geist-mono)]">
-              <div className="mt-6">
-                  <h4 className="text-xl font-semibold text-[#e6edf3] mb-2 font-[family-name:var(--font-geist-mono)]">Project Report Abstract:</h4>
-                  <p>Chest radiographs are among the most widely used imaging techniques in the evaluation of pneumonia conditions. In recent years, the interpretation of these images has increasingly involved the use of computer-aided diagnosis (CAD) systems, which aim to improve diagnostic accuracy and minimize inter-observer variability. Identification of the projection plane is essential for the performance of these systems, as variations in projection views—typically frontal affect the appearance of anatomical structures and pathological features. This study proposes a deep learning-based approach for the automatic classification of chest X-ray projections. Therefore, various CNN architectures and ViT models have been trained to detect anatomical differences and categorize the images into frontal views. Among the fine-tuned models using transfer learning, ShuffleNet V2 x1.0 and  EfficientNet-B0 yielded the best results on the Chest X-Ray Images (Pneumonia) dataset. The training process was conducted using the Adam optimization algorithm and the cross-entropy loss function. Evaluation metrics such as accuracy, sensitivity, specificity, and F1-score demonstrated the effectiveness of the proposed model in projection classification tasks.</p>
+                
+                <div className="text-[#8b949e] space-y-4 markdown-content font-[family-name:var(--font-geist-mono)]">
+                <div className="mt-6">
+                    <h4 className="text-xl font-semibold text-[#e6edf3] mb-2 font-[family-name:var(--font-geist-mono)]">Amaç:</h4>
+                    <p>Göğüs röntgen görüntülerinden pnömoni gibi akciğer hastalıklarını otomatik olarak tanılayabilen, kararlarını açıklayabilen ve bu çıktıları anlamlı bir klinik rapor haline getirebilen yapay zeka sistemleri geliştirmektir.</p>
+                  </div>
+                  <p>
+                    Modelimizi eğitmek için <a href="https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia/data" target="_blank" rel="noopener noreferrer" className="text-[#58a6ff] hover:underline">Kaggle&apos;daki Pnömoni Teşhisi için Göğüs Röntgeni</a> veri setini kullandık. Bu veri seti, Guangzhou Kadın ve Çocuk Sağlığı Merkezi&apos;ndeki 1-5 yaş arası pediyatrik hastalara ait 5,863 adet Pnömoni ve Normal olarak sınıflandırılmış göğüs röntgeni (JPEG) görüntüsünden oluşmaktadır. Otomatik pnömoni tespiti için model geliştirme ve test etme amacıyla tasarlanmıştır.
+                  </p>
                 </div>
-                <p>
-                  <a 
-                    onClick={(e) => handleScroll(e, 'presentation')}
-                    href="#presentation" 
-                    className="text-[#58a6ff] hover:underline font-semibold"
-                  >
-                    Raporun tamamı için tıklayın &rarr;
-                  </a>
-                </p>
-              </div>
-            </motion.div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="bg-[#161b22] rounded-lg border border-[#30363d] p-6 shadow-lg"
+          >
+                <div className="flex items-center mb-4">
+                  <div className="w-3 h-3 rounded-full bg-[#ff5f56] mr-2"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#ffbd2e] mr-2"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#27c93f] mr-4"></div>
+                  <span className="text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)]">project-abstract.md</span>
+                </div>
+
+                <div className="text-[#8b949e] space-y-4 markdown-content font-[family-name:var(--font-geist-mono)]">
+                <div className="mt-6">
+                    <h4 className="text-xl font-semibold text-[#e6edf3] mb-2 font-[family-name:var(--font-geist-mono)]">Project Report Abstract:</h4>
+                    <p>Chest radiographs are among the most widely used imaging techniques in the evaluation of pneumonia conditions. In recent years, the interpretation of these images has increasingly involved the use of computer-aided diagnosis (CAD) systems, which aim to improve diagnostic accuracy and minimize inter-observer variability. This study proposes a deep learning-based approach for the automatic pneumonia classification of chest X-ray. Therefore, various CNN architectures and ViT models have been trained to detect anatomical differences and categorize the images into frontal views. Among the fine-tuned models using transfer learning, ShuffleNet V2 x1.0 and  EfficientNet-B0 yielded the best results on the Chest X-Ray Images (Pneumonia) dataset. The training process was conducted using the Adam optimization algorithm and the cross-entropy loss function. Evaluation metrics such as accuracy, sensitivity, specificity, and F1-score demonstrated the effectiveness of the proposed model in projection classification tasks.</p>
+                  </div>
+                  <p>
+                    <a 
+                      onClick={(e) => handleScroll(e, 'presentation')}
+                      href="#presentation" 
+                      className="text-[#58a6ff] hover:underline font-semibold"
+                    >
+                      Raporun tamamı için tıklayın &rarr;
+                    </a>
+                  </p>
+                </div>
+              </motion.div>
+            </div>
             
+            {/* Right Column - Model Architectures */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -498,10 +503,32 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")`}</code>
                 </thead>
                 <tbody className="divide-y divide-[#30363d]">
                   <tr className="text-[#e6edf3]">
-                    <td className="px-4 py-2 font-medium">EfficientNet-B0</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.941</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.969</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.991</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.941</td>{/* Placeholder */}
+                    <td className="px-4 py-2 font-medium">EfficientNet-B0</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.889</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}
                   </tr>
                   <tr className="text-[#e6edf3] bg-[#161b22]/30">
-                    <td className="px-4 py-2 font-medium">ShuffleNet V2</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.92</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.95</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.93</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.97</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.88</td>{/* Placeholder */}
+                    <td className="px-4 py-2 font-medium">ShuffleNet V2</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.889</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="overflow-x-auto mt-10 bg-[#0d1117] rounded-lg border border-[#30363d]">
+              <table className="min-w-full text-sm font-[family-name:var(--font-geist-mono)]">
+                <thead className="bg-[#161b22] text-left text-[#8b949e]">
+                  <tr>
+                    <th className="px-4 py-2 font-semibold">Model</th>
+                    <th className="px-4 py-2 font-semibold text-center">Precision</th>
+                    <th className="px-4 py-2 font-semibold text-center">Recall</th>
+                    <th className="px-4 py-2 font-semibold text-center">F1-Score</th>
+                    <th className="px-4 py-2 font-semibold text-center">ROC-AUC</th>
+                    <th className="px-4 py-2 font-semibold text-center">IOU</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#30363d]">
+                  <tr className="text-[#e6edf3]">
+                    <td className="px-4 py-2 font-medium">EfficientNet-B0</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.89</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.941</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.889</td>{/* Placeholder */}
+                  </tr>
+                  <tr className="text-[#e6edf3] bg-[#161b22]/30">
+                    <td className="px-4 py-2 font-medium">ShuffleNet V2</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.62</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.761</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.615</td>{/* Placeholder */}
                   </tr>
                 </tbody>
               </table>
