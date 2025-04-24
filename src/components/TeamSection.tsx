@@ -12,7 +12,7 @@ export default function TeamSection() {
     {
       name: "Emir Ersel Bilgiç",
       role: "Yapay Zeka Mühendisi - Web Geliştirici",
-      description: "Developer of ikcisallyouneed.com",
+      description: "Developer of ikcisallyouneed.com, Special focus on 'Artificial Intelligence based Glucose Prediction for Diabetes Management'. Founder of diyetika.com",
       image: "/emirersel.png",
       cv: {
         education: [
@@ -26,7 +26,7 @@ export default function TeamSection() {
           "Research Paper - Latin America 8th International Conference on Scientific Researches - CONTINUAL DEEP LEARNING BASED GLUCOSE PREDICTION FOR DIABETES MANAGEMENT",
           "Research Paper - Latin America 8th International Conference on Scientific Researches - GLUCAST: DEEP LEARNING BASED SMARTPHONE APPLICATION FOR PERSONALIZED GLUCOSE PREDICTION",
           "TUBITAK 2209B - Artificial Intelligence-Based Energy Demand Forecasting and Anomaly Detection for Energy Efficiency Optimization",
-          "Scholarship Holder - Development of an AI-Assisted Wearable Sensor System for Minimally Invasive Colorimetric Measurement of Critical Exercise Biomarkers for Personalized Sport"
+          "Scholarship Holder - TUBITAK - Development of an AI-Assisted Wearable Sensor System for Minimally Invasive Colorimetric Measurement of Critical Exercise Biomarkers for Personalized Sport"
         ]
       }
     },
@@ -49,16 +49,27 @@ export default function TeamSection() {
     {
       name: "Mustafa Ayanoğlu",
       role: "Yapay Zeka Mühendisi",
-      description: "Artifical intelligence model developement. Data augmentation and research.",
+      description: "Artificial intelligence model development, data augmentation, explainability and research. Special focus on medical image analysis, transformer-based reporting and applied health AI systems.",
       image: "/mustafa.jpeg",
       cv: {
         education: [
           "Elektrik-Elektronik Mühendisliği, İzmir Katip Çelebi Üniversitesi, 2019",
         ],
-        experience: [
+        "experience": [
+          "TÜBİTAK 2209-A Project Manager, Mar 2024 – Present",
+          "TÜBİTAK Trainee Researcher, Feb 2024 – Sep 2024",
+          "TUSEB A1 Project Manager, Apr 2023 – Present",
+          "Artificial Intelligence Researcher, IKCU AI Lab, 2022 – Present",
+          "Intern, Republic of Turkey Ministry of Industry and Technology, Aug 2023 – Sep 2023"
         ],
-        projects: [
+
+        "projects": [
+          "CLASSIFICATION OF CHEST X-RAY IMAGES USING VISION TRANSFORMER",
+          "AUTOMATED CHEST X-RAY PROJECTION CLASSIFICATION",
+          "TRANSFORMER-BASED SEQUENCE-TO-SEQUENCE MEDICAL REPORT GENERATION",
+          "AUTOMATED CHEST X-RAY GENDER CLASSIFICATION"
         ]
+
       }
     },
     {
