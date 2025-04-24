@@ -177,8 +177,7 @@ export default function TeamSection() {
   "role": "${member.role}",
   "description": "${member.description}",
   "education": [
-    "${member.cv.education[0]}",
-    "${member.cv.education[1] || ''}"
+    "${member.cv.education[0]}"
   ],
   "experience": [
     "${member.cv.experience[0]}",
