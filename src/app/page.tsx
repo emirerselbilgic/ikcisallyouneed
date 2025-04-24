@@ -428,6 +428,48 @@ project.execute(); // Let's win this!
                   </div>
                 </div>
               </div>
+              
+              {/* Requirements.txt Download Section */}
+              <div className="bg-[#161b22] rounded-lg border border-[#30363d] p-6 shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="w-3 h-3 rounded-full bg-[#ff5f56] mr-2"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#ffbd2e] mr-2"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#27c93f] mr-4"></div>
+                  <span className="text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)]">requirements.txt</span>
+                </div>
+                <h4 className="text-xl font-semibold text-[#e6edf3] mb-4 font-[family-name:var(--font-geist-mono)] flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#58a6ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  Bağımlılıklar ve Gereksinimler
+                </h4>
+                <p className="text-sm text-[#8b949e] mb-5 font-[family-name:var(--font-geist-mono)]">
+                </p>
+                <div className="bg-[#0d1117] rounded-lg border border-[#30363d] p-3 md:p-4 mb-5 overflow-x-auto">
+                  <pre className="text-xs md:text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)]"><code>torch==2.0.1
+torchvision==0.15.2
+numpy==1.24.3
+pandas==2.0.2
+matplotlib==3.7.1
+scikit-learn==1.2.2
+pillow==9.5.0
+jupyter==1.0.0
+grad-cam==1.4.6
+</code></pre>
+                </div>
+                <div className="text-center">
+                  <a 
+                    href="/requirements.txt" 
+                    download
+                    className="inline-flex items-center text-sm font-medium text-[#58a6ff] hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#58a6ff] font-[family-name:var(--font-geist-mono)]"
+                  >
+                    <svg className="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    requirements.txt İndir
+                  </a>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
