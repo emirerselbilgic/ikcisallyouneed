@@ -173,13 +173,6 @@ export default function Home() {
   ];
   
 
-  const techs = [
-    { name: "Derin Öğrenme", icon: "🧠", color: "from-fuchsia-600 to-purple-600" },
-    { name: "Doğal Dil İşleme", icon: "💬", color: "from-purple-600 to-blue-600" },
-    { name: "Bilgisayarlı Görü", icon: "👁️", color: "from-blue-600 to-cyan-600" },
-    { name: "Veri Analizi", icon: "📊", color: "from-cyan-600 to-emerald-600" }
-  ];
-
   const codeString = `
 /* IKC is All You Need! AI Hackathon Team */
 function createProject() {
@@ -348,7 +341,7 @@ project.execute(); // Let's win this!
                   <p>Göğüs röntgen görüntülerinden pnömoni gibi akciğer hastalıklarını otomatik olarak tanılayabilen, kararlarını açıklayabilen ve bu çıktıları anlamlı bir klinik rapor haline getirebilen yapay zeka sistemleri geliştirmektir.</p>
                 </div>
                 <p>
-                  Modelimizi eğitmek için <a href="https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia/data" target="_blank" rel="noopener noreferrer" className="text-[#58a6ff] hover:underline">Kaggle'daki Pnömoni Teşhisi için Göğüs Röntgeni</a> veri setini kullandık. Bu veri seti, Guangzhou Kadın ve Çocuk Sağlığı Merkezi'ndeki 1-5 yaş arası pediyatrik hastalara ait 5,863 adet Pnömoni ve Normal olarak sınıflandırılmış göğüs röntgeni (JPEG) görüntüsünden oluşmaktadır. Otomatik pnömoni tespiti için model geliştirme ve test etme amacıyla tasarlanmıştır.
+                  Modelimizi eğitmek için <a href="https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia/data" target="_blank" rel="noopener noreferrer" className="text-[#58a6ff] hover:underline">Kaggle&apos;daki Pnömoni Teşhisi için Göğüs Röntgeni</a> veri setini kullandık. Bu veri seti, Guangzhou Kadın ve Çocuk Sağlığı Merkezi&apos;ndeki 1-5 yaş arası pediyatrik hastalara ait 5,863 adet Pnömoni ve Normal olarak sınıflandırılmış göğüs röntgeni (JPEG) görüntüsünden oluşmaktadır. Otomatik pnömoni tespiti için model geliştirme ve test etme amacıyla tasarlanmıştır.
                 </p>
               </div>
             </motion.div>
@@ -369,7 +362,7 @@ project.execute(); // Let's win this!
               <div className="text-[#8b949e] space-y-4 markdown-content font-[family-name:var(--font-geist-mono)]">
               <div className="mt-6">
                   <h4 className="text-xl font-semibold text-[#e6edf3] mb-2 font-[family-name:var(--font-geist-mono)]">Project Report Abstract:</h4>
-                  <p>Chest radiographs are among the most widely used imaging techniques in the evaluation of pneumonia conditions. In recent years, the interpretation of these images has increasingly involved the use of computer-aided diagnosis (CAD) systems, which aim to improve diagnostic accuracy and minimize inter-observer variability. Identification of the projection plane is essential for the performance of these systems, as variations in projection views—typically frontal affect the appearance of anatomical structures and pathological features. This study proposes a deep learning-based approach for the automatic classification of chest X-ray projections. Therefore, various CNN architectures and ViT models have been trained to detect anatomical differences and categorize the images into frontal views. Among the fine-tuned models using transfer learning, ShuffleNet\_V2\_x1\_0 and  EfficientNet-B0 yielded the best results on the Chest X-Ray Images (Pneumonia) dataset. The training process was conducted using the Adam optimization algorithm and the cross-entropy loss function. Evaluation metrics such as accuracy, sensitivity, specificity, and F1-score demonstrated the effectiveness of the proposed model in projection classification tasks.</p>
+                  <p>Chest radiographs are among the most widely used imaging techniques in the evaluation of pneumonia conditions. In recent years, the interpretation of these images has increasingly involved the use of computer-aided diagnosis (CAD) systems, which aim to improve diagnostic accuracy and minimize inter-observer variability. Identification of the projection plane is essential for the performance of these systems, as variations in projection views—typically frontal affect the appearance of anatomical structures and pathological features. This study proposes a deep learning-based approach for the automatic classification of chest X-ray projections. Therefore, various CNN architectures and ViT models have been trained to detect anatomical differences and categorize the images into frontal views. Among the fine-tuned models using transfer learning, ShuffleNet V2 x1.0 and  EfficientNet-B0 yielded the best results on the Chest X-Ray Images (Pneumonia) dataset. The training process was conducted using the Adam optimization algorithm and the cross-entropy loss function. Evaluation metrics such as accuracy, sensitivity, specificity, and F1-score demonstrated the effectiveness of the proposed model in projection classification tasks.</p>
                 </div>
                 <p>
                   <a 
