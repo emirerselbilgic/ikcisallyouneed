@@ -31,6 +31,18 @@ export default function Home() {
     setHasMounted(true);
   }, []);
   
+  // Smooth scroll handler
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+  
   // Use fixed code snippets instead of random ones to avoid hydration errors
   const codeSnippets = [
     'import React from "react";',
@@ -340,6 +352,36 @@ project.execute(); // Let's win this!
                 </p>
               </div>
             </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="md:col-span-3 bg-[#161b22] rounded-lg border border-[#30363d] p-6 shadow-lg"
+        >
+              <div className="flex items-center mb-4">
+                <div className="w-3 h-3 rounded-full bg-[#ff5f56] mr-2"></div>
+                <div className="w-3 h-3 rounded-full bg-[#ffbd2e] mr-2"></div>
+                <div className="w-3 h-3 rounded-full bg-[#27c93f] mr-4"></div>
+                <span className="text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)]">project-abstract.md</span>
+              </div>
+
+              <div className="text-[#8b949e] space-y-4 markdown-content font-[family-name:var(--font-geist-mono)]">
+              <div className="mt-6">
+                  <h4 className="text-xl font-semibold text-[#e6edf3] mb-2 font-[family-name:var(--font-geist-mono)]">Project Report Abstract:</h4>
+                  <p>Chest radiographs are among the most widely used imaging techniques in the evaluation of pneumonia conditions. In recent years, the interpretation of these images has increasingly involved the use of computer-aided diagnosis (CAD) systems, which aim to improve diagnostic accuracy and minimize inter-observer variability. Identification of the projection plane is essential for the performance of these systems, as variations in projection views—typically frontal affect the appearance of anatomical structures and pathological features. This study proposes a deep learning-based approach for the automatic classification of chest X-ray projections. Therefore, various CNN architectures and ViT models have been trained to detect anatomical differences and categorize the images into frontal views. Among the fine-tuned models using transfer learning, ShuffleNet\_V2\_x1\_0 and  EfficientNet-B0 yielded the best results on the Chest X-Ray Images (Pneumonia) dataset. The training process was conducted using the Adam optimization algorithm and the cross-entropy loss function. Evaluation metrics such as accuracy, sensitivity, specificity, and F1-score demonstrated the effectiveness of the proposed model in projection classification tasks.</p>
+                </div>
+                <p>
+                  <a 
+                    onClick={(e) => handleScroll(e, 'presentation')}
+                    href="#presentation" 
+                    className="text-[#58a6ff] hover:underline font-semibold"
+                  >
+                    Raporun tamamı için tıklayın &rarr;
+                  </a>
+                </p>
+              </div>
+            </motion.div>
             
             <motion.div
               initial={{ opacity: 0, x: 30 }}
@@ -463,10 +505,10 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")`}</code>
                 </thead>
                 <tbody className="divide-y divide-[#30363d]">
                   <tr className="text-[#e6edf3]">
-                    <td className="px-4 py-2 font-medium">ShuffleNet V2 x1.0</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.941</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.969</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.991</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.941</td>{/* Placeholder */}
+                    <td className="px-4 py-2 font-medium">EfficientNet-B0</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.941</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.969</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.991</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.941</td>{/* Placeholder */}
                   </tr>
                   <tr className="text-[#e6edf3] bg-[#161b22]/30">
-                    <td className="px-4 py-2 font-medium">EfficientNet-B0</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.92</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.95</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.93</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.97</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.88</td>{/* Placeholder */}
+                    <td className="px-4 py-2 font-medium">ShuffleNet V2</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.92</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.95</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.93</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.97</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.88</td>{/* Placeholder */}
                   </tr>
                 </tbody>
               </table>
@@ -681,8 +723,9 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")`}</code>
           </a>
           
           <div className="flex gap-8">
-            <a href="#proje" className="text-gray-300 hover:text-white transition-colors">Proje</a>
-            <a href="#ekip" className="text-gray-300 hover:text-white transition-colors">Ekip</a>
+            <a href="#proje" onClick={(e) => handleScroll(e, 'proje')} className="text-gray-300 hover:text-white transition-colors">Proje</a>
+            <a href="#ekip" onClick={(e) => handleScroll(e, 'ekip')} className="text-gray-300 hover:text-white transition-colors">Ekip</a>
+            <a href="#results" onClick={(e) => handleScroll(e, 'results')} className="text-gray-300 hover:text-white transition-colors">Sonuçlar</a>
           </div>
         </div>
       </nav>
