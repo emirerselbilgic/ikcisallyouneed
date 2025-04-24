@@ -638,14 +638,15 @@ models = [
             {/* Download Link for Task 2 */}
             <div className="mt-6 text-center space-y-2">
                <a 
-                href="/task2_explainability.zip" 
-                download
+                href="https://drive.google.com/file/d/1zP42lt6UzsJb-nwGO0_DZd2vL-OvpOIG/view?usp=drive_link" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center text-sm font-medium text-[#58a6ff] hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#58a6ff] font-[family-name:var(--font-geist-mono)]"
               >
                 <svg className="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
-                task2_explainability.zip
+                task2_explainability.zip (Google Drive)
               </a>
             </div>
           </motion.div>

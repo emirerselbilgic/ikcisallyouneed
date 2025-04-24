@@ -41,52 +41,40 @@ export default function TeamSection() {
           "UI/UX Tasarım Sertifikası, 2020"
         ],
         experience: [
-          "Frontend Geliştirici, Tech Startup, 2020-2022",
-          "UI Tasarımcısı, Design Agency, 2022-Günümüz"
         ],
         projects: [
-          "E-ticaret platformu arayüz tasarımı",
-          "Mobil uyumlu web uygulaması geliştirme"
         ]
       }
     },
     {
       name: "Mustafa Ayanoğlu",
-      role: "Backend Geliştirici",
+      role: "Yapay Zeka Mühendisi",
       description: "Veritabanı yönetimi ve API geliştirme konusunda uzman. Ölçeklenebilir ve güvenli backend mimarileri tasarlama.",
       image: "/mustafa.jpeg",
       cv: {
         education: [
-          "Bilgisayar Mühendisliği, İzmir Katip Çelebi Üniversitesi, 2020",
-          "Veritabanı Yönetimi Sertifikası, 2019"
+          "Elektrik-Elektronik Mühendisliği, İzmir Katip Çelebi Üniversitesi, 2019",
         ],
         experience: [
-          "Backend Geliştirici, Enterprise Solutions, 2019-2021",
-          "Sistem Mimarı, Cloud Services, 2021-Günümüz"
         ],
         projects: [
-          "Mikroservis mimarisi implementasyonu",
-          "API Gateway ve kimlik doğrulama sistemi"
         ]
       }
     },
     {
       name: "Batu Arıbakır",
-      role: "Proje Yöneticisi",
+      role: "Yapay Zeka Mühendisi",
       description: "Proje planlaması ve ekip koordinasyonu konusunda deneyimli. Agile metodolojileri uygulama ve proje takibi.",
       image: "/batu.jpeg",
       cv: {
         education: [
-          "İşletme Yönetimi, İzmir Katip Çelebi Üniversitesi, 2019",
-          "Proje Yönetimi Sertifikası (PMP), 2020"
+          "Elektrik-Elektronik Mühendisliği, İzmir Katip Çelebi Üniversitesi, 2022",
+
         ],
         experience: [
-          "Proje Asistanı, Management Consultancy, 2018-2020",
-          "Proje Yöneticisi, Tech Innovations, 2020-Günümüz"
         ],
         projects: [
-          "Kurumsal dönüşüm projesi yönetimi",
-          "Yazılım geliştirme süreçleri optimizasyonu"
+
         ]
       }
     },
