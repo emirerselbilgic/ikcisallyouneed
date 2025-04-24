@@ -489,8 +489,7 @@ models = [
   models.shufflenet_v2_x1_0,
   models.efficientnet_b0
 ]
-
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")`}</code></pre>
+`}</code></pre>
             </div>
             <h4 className="text-md font-semibold text-[#e6edf3] mb-3 font-[family-name:var(--font-geist-mono)]">Performans Metrikleri (Test Seti):</h4>
             {/* Updated Metrics Table */}
@@ -498,7 +497,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")`}</code>
               <table className="min-w-full text-sm font-[family-name:var(--font-geist-mono)]">
                 <thead className="bg-[#161b22] text-left text-[#8b949e]">
                   <tr>
-                    <th className="px-4 py-2 font-semibold">Model</th>
+                    <th className="px-4 py-2 font-semibold">Model - Original</th>
                     <th className="px-4 py-2 font-semibold text-center">Train Accuracy</th>
                     <th className="px-4 py-2 font-semibold text-center">Validation Accuracy</th>
                     <th className="px-4 py-2 font-semibold text-center">Precision</th>
@@ -522,7 +521,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")`}</code>
               <table className="min-w-full text-sm font-[family-name:var(--font-geist-mono)]">
                 <thead className="bg-[#161b22] text-left text-[#8b949e]">
                   <tr>
-                    <th className="px-4 py-2 font-semibold">Model</th>
+                    <th className="px-4 py-2 font-semibold">Model - Clahed</th>
                     <th className="px-4 py-2 font-semibold text-center">Train Accuracy</th>
                     <th className="px-4 py-2 font-semibold text-center">Validation Accuracy</th>
                     <th className="px-4 py-2 font-semibold text-center">Precision</th>
@@ -542,10 +541,58 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")`}</code>
                 </tbody>
               </table>
             </div>
+            <div className="overflow-x-auto mt-10 bg-[#0d1117] rounded-lg border border-[#30363d]">
+              <table className="min-w-full text-sm font-[family-name:var(--font-geist-mono)]">
+                <thead className="bg-[#161b22] text-left text-[#8b949e]">
+                  <tr>
+                    <th className="px-4 py-2 font-semibold">Model - Augmented</th>
+                    <th className="px-4 py-2 font-semibold text-center">Train Accuracy</th>
+                    <th className="px-4 py-2 font-semibold text-center">Validation Accuracy</th>
+                    <th className="px-4 py-2 font-semibold text-center">Precision</th>
+                    <th className="px-4 py-2 font-semibold text-center">Recall</th>
+                    <th className="px-4 py-2 font-semibold text-center">F1-Score</th>
+                    <th className="px-4 py-2 font-semibold text-center">ROC-AUC</th>
+                    <th className="px-4 py-2 font-semibold text-center">IOU</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#30363d]">
+                  <tr className="text-[#e6edf3]">
+                    <td className="px-4 py-2 font-medium">EfficientNet-B0</td><td className="px-4 py-2 text-center text-[#58a6ff]">0,994</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,969</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,9412</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,969</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,941</td>{/* Placeholder */}
+                  </tr>
+                  <tr className="text-[#e6edf3] bg-[#161b22]/30">
+                    <td className="px-4 py-2 font-medium">ShuffleNet V2</td><td className="px-4 py-2 text-center text-[#58a6ff]">0,993 </td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,937 </td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,889</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,942</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,889</td>{/* Placeholder */}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="overflow-x-auto mt-10 bg-[#0d1117] rounded-lg border border-[#30363d]">
+              <table className="min-w-full text-sm font-[family-name:var(--font-geist-mono)]">
+                <thead className="bg-[#161b22] text-left text-[#8b949e]">
+                  <tr>
+                    <th className="px-4 py-2 font-semibold">Model - Multiclass</th>
+                    <th className="px-4 py-2 font-semibold text-center">Train Accuracy</th>
+                    <th className="px-4 py-2 font-semibold text-center">Validation Accuracy</th>
+                    <th className="px-4 py-2 font-semibold text-center">Precision</th>
+                    <th className="px-4 py-2 font-semibold text-center">Recall</th>
+                    <th className="px-4 py-2 font-semibold text-center">F1-Score</th>
+                    <th className="px-4 py-2 font-semibold text-center">ROC-AUC</th>
+                    <th className="px-4 py-2 font-semibold text-center">IOU</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#30363d]">
+                  <tr className="text-[#e6edf3]">
+                    <td className="px-4 py-2 font-medium">EfficientNet-B0</td><td className="px-4 py-2 text-center text-[#58a6ff]">0,987</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,75 </td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,667</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,5</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,555</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]"></td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]"></td>{/* Placeholder */}
+                  </tr>
+                  <tr className="text-[#e6edf3] bg-[#161b22]/30">
+                    <td className="px-4 py-2 font-medium">ShuffleNet V2</td><td className="px-4 py-2 text-center text-[#58a6ff]">0,975</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,563 </td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,6666666667</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,375</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,4444444444</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]"></td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]"></td>{/* Placeholder */}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
              {/* Download Link for Task 1 */}
             <div className="mt-6 text-center">
               <a 
-                href="/downloads/task1_classification.json" 
+                href="/model_predictions.zip"
                 download
                 className="inline-flex items-center text-sm font-medium text-[#58a6ff] hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#58a6ff] font-[family-name:var(--font-geist-mono)]"
               >
@@ -580,31 +627,25 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")`}</code>
             {/* Placeholder for XAI images - Replace with actual images */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="relative border border-[#30363d] rounded-lg overflow-hidden aspect-square bg-[#0d1117]">
-                 <Image src="/placeholder-xai-1.png" alt="Açıklanabilirlik Haritası 1" layout="fill" objectFit="contain" className="opacity-80" />
-                 <p className="absolute bottom-2 left-2 bg-black/50 px-2 py-1 text-xs rounded">NORMAL Örnek</p>
+                 <Image src="/heatmap1.png" alt="Açıklanabilirlik Haritası 1" layout="fill" objectFit="contain" className="opacity-80" />
+                 <p className="absolute bottom-2 left-2 bg-black/50 px-2 py-1 text-xs rounded">PNEUMONIA VIRUS Örnek</p>
               </div>
               <div className="relative border border-[#30363d] rounded-lg overflow-hidden aspect-square bg-[#0d1117]">
-                 <Image src="/placeholder-xai-2.png" alt="Açıklanabilirlik Haritası 2" layout="fill" objectFit="contain" className="opacity-80" />
-                 <p className="absolute bottom-2 left-2 bg-black/50 px-2 py-1 text-xs rounded">PNÖMONİ Örnek (Sağ Alt Lob)</p>
+                 <Image src="/heatmap2.png" alt="Açıklanabilirlik Haritası 2" layout="fill" objectFit="contain" className="opacity-80" />
+                 <p className="absolute bottom-2 left-2 bg-black/50 px-2 py-1 text-xs rounded">PNEUMONIA BACTERIA Örnek</p>
               </div>
             </div>
-            <p className="text-xs text-[#8b949e] mt-2 text-center font-[family-name:var(--font-geist-mono)]">
-              <code>{"//"} Örnek açıklanabilirlik haritaları (gerçek çıktılarla değiştirilecek)</code>
-            </p>
             {/* Download Link for Task 2 */}
             <div className="mt-6 text-center space-y-2">
-               <p className="text-xs text-[#8b949e] font-[family-name:var(--font-geist-mono)]">
-                Görseller <code className="bg-[#0d1117] px-1 rounded text-xs text-gray-400">/downloads/task2_explainability/&lt;image&gt;_&lt;label&gt;.png</code> formatında bulunur.
-               </p>
                <a 
-                href="/downloads/task2_metadata.json" 
+                href="/task2_explainability.zip" 
                 download
                 className="inline-flex items-center text-sm font-medium text-[#58a6ff] hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#58a6ff] font-[family-name:var(--font-geist-mono)]"
               >
                 <svg className="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
-                task2_metadata.json
+                task2_explainability.zip
               </a>
             </div>
           </motion.div>
