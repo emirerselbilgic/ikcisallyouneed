@@ -176,7 +176,7 @@ export default function Home() {
   const codeString = `
 /* IKC is All You Need! AI Hackathon Team */
 function createProject() {
-  const team = ["Emir", "Emir", "Mustafa", "Batu"];
+  const team = ["Ersel", "Emir", "Mustafa", "Batu"];
   const technologies = ["AI", "ML", "React", "Node.js"];
   const goal = "Win the hackathon!";
   
@@ -226,7 +226,7 @@ project.execute(); // Let's win this!
           </div>
         </div>
 
-        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto flex flex-col items-center justify-center min-h-[85vh]">
+        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto flex flex-col items-center justify-center min-h-[85vh] pointer-events-auto">
           <div className="mb-10 font-bold">
             <div className="inline-block text-center">
               <span className="text-5xl md:text-7xl text-[#58a6ff] relative z-10 font-[family-name:var(--font-geist-mono)] whitespace-nowrap">
@@ -260,34 +260,39 @@ project.execute(); // Let's win this!
             className="text-lg text-[#8b949e] mb-12 max-w-2xl mx-auto font-[family-name:var(--font-geist-mono)]"
           >
             Kod tutkunlarından oluşan ekibimiz, İzmir Katip Çelebi Üniversitesi yapay zeka hackathonunda 
-            yenilikçi çözümler geliştiriyor. Teknoloji stack&apos;imiz ve projemiz ile tanışın.
+            yenilikçi çözümler geliştiriyor. Teknoloji ekibimiz ve projemiz ile tanışın.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-            className="flex flex-wrap justify-center gap-4 mb-8"
+          <div
+            className="flex flex-wrap justify-center gap-4 mb-8 relative z-30"
           >
-            <a 
-              href="#proje"
-              className="px-6 py-2 bg-[#238636] text-white rounded-md hover:bg-[#2ea043] transition-colors flex items-center font-[family-name:var(--font-geist-mono)]"
+            <button 
+              onClick={() => {
+                const element = document.getElementById('proje');
+                element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+              className="px-6 py-2 bg-[#238636] text-white rounded-md hover:bg-[#2ea043] transition-colors flex items-center font-[family-name:var(--font-geist-mono)] cursor-pointer"
+              type="button"
             >
               <svg className="w-5 h-5 mr-2" viewBox="0 0 16 16" fill="currentColor">
                 <path fillRule="evenodd" d="M11.4 8L6.7 3.3a1 1 0 0 1 1.4-1.4l5.6 5.6a1 1 0 0 1 0 1.4l-5.6 5.6a1 1 0 0 1-1.4-1.4L11.4 8z"/>
               </svg>
               <code>project.explore()</code>
-          </a>
-          <a
-              href="#ekip"
-              className="px-6 py-2 bg-transparent border border-[#6e7681] text-white rounded-md hover:bg-[#30363d] transition-colors flex items-center font-[family-name:var(--font-geist-mono)]"
+            </button>
+            <button
+              onClick={() => {
+                const element = document.getElementById('ekip');
+                element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+              className="px-6 py-2 bg-transparent border border-[#6e7681] text-white rounded-md hover:bg-[#30363d] transition-colors flex items-center font-[family-name:var(--font-geist-mono)] cursor-pointer"
+              type="button"
             >
               <svg className="w-5 h-5 mr-2" viewBox="0 0 16 16" fill="currentColor">
                 <path fillRule="evenodd" d="M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.5 1.5 0 01.666 2.844.75.75 0 00-.416.672v.352a.75.75 0 00.574.73c1.2.289 2.162 1.2 2.522 2.372a.75.75 0 101.434-.44 5.01 5.01 0 00-2.56-3.012A3 3 0 0011 4z"/>
               </svg>
               <code>team.members</code>
-            </a>
-          </motion.div>
+            </button>
+          </div>
         </div>
 
 
@@ -494,6 +499,8 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")`}</code>
                 <thead className="bg-[#161b22] text-left text-[#8b949e]">
                   <tr>
                     <th className="px-4 py-2 font-semibold">Model</th>
+                    <th className="px-4 py-2 font-semibold text-center">Train Accuracy</th>
+                    <th className="px-4 py-2 font-semibold text-center">Validation Accuracy</th>
                     <th className="px-4 py-2 font-semibold text-center">Precision</th>
                     <th className="px-4 py-2 font-semibold text-center">Recall</th>
                     <th className="px-4 py-2 font-semibold text-center">F1-Score</th>
@@ -503,10 +510,10 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")`}</code>
                 </thead>
                 <tbody className="divide-y divide-[#30363d]">
                   <tr className="text-[#e6edf3]">
-                    <td className="px-4 py-2 font-medium">EfficientNet-B0</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.889</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}
+                    <td className="px-4 py-2 font-medium">EfficientNet-B0</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.99674 </td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.875</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.889</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}
                   </tr>
                   <tr className="text-[#e6edf3] bg-[#161b22]/30">
-                    <td className="px-4 py-2 font-medium">ShuffleNet V2</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.889</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}
+                    <td className="px-4 py-2 font-medium">ShuffleNet V2</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.99617</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.875</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.889</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.8</td>{/* Placeholder */}
                   </tr>
                 </tbody>
               </table>
@@ -516,6 +523,8 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")`}</code>
                 <thead className="bg-[#161b22] text-left text-[#8b949e]">
                   <tr>
                     <th className="px-4 py-2 font-semibold">Model</th>
+                    <th className="px-4 py-2 font-semibold text-center">Train Accuracy</th>
+                    <th className="px-4 py-2 font-semibold text-center">Validation Accuracy</th>
                     <th className="px-4 py-2 font-semibold text-center">Precision</th>
                     <th className="px-4 py-2 font-semibold text-center">Recall</th>
                     <th className="px-4 py-2 font-semibold text-center">F1-Score</th>
@@ -525,10 +534,10 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")`}</code>
                 </thead>
                 <tbody className="divide-y divide-[#30363d]">
                   <tr className="text-[#e6edf3]">
-                    <td className="px-4 py-2 font-medium">EfficientNet-B0</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.89</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.941</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.889</td>{/* Placeholder */}
+                    <td className="px-4 py-2 font-medium">EfficientNet-B0</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.99636 </td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.9375 </td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.89</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.941</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.889</td>{/* Placeholder */}
                   </tr>
                   <tr className="text-[#e6edf3] bg-[#161b22]/30">
-                    <td className="px-4 py-2 font-medium">ShuffleNet V2</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.62</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.761</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.615</td>{/* Placeholder */}
+                    <td className="px-4 py-2 font-medium">ShuffleNet V2</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.99847 </td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.6875 </td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.62</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.761</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1.0</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.615</td>{/* Placeholder */}
                   </tr>
                 </tbody>
               </table>
@@ -702,7 +711,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")`}</code>
               className="bg-[#161b22] rounded-lg border border-[#30363d] p-2 shadow-lg overflow-hidden"
             >
               <iframe 
-                src="/projectpdf.pdf" 
+                src="/project_pdf.pdf" 
                 className="w-full h-[70vh] md:h-[80vh] rounded"
                 title="Proje Sunumu PDF"
                 // Adding sandbox attribute for security, adjust as needed
@@ -710,7 +719,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")`}</code>
               >
                 {/* Fallback content is now less likely to cause hydration issues */}
                 Tarayıcınız PDF görüntülemeyi desteklemiyor. 
-                <a href="/projectpdf.pdf" className="text-[#58a6ff] hover:underline">Sunumu buradan indirebilirsiniz</a>.
+                <a href="/project_pdf.pdf" className="text-[#58a6ff] hover:underline">Sunumu buradan indirebilirsiniz</a>.
               </iframe>
             </motion.div>
           )}
