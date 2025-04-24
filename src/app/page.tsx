@@ -25,6 +25,12 @@ export default function Home() {
   
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
   
+  // State to manage client-side mounting
+  const [hasMounted, setHasMounted] = useState(false);
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+  
   // Use fixed code snippets instead of random ones to avoid hydration errors
   const codeSnippets = [
     'import React from "react";',
@@ -282,6 +288,9 @@ project.execute(); // Let's win this!
 
       </section>
 
+      {/* Team Section */}
+      <TeamSection />
+
       {/* Project Section */}
       <section id="proje" className="py-20 px-4 relative border-t border-[#30363d] mt-16">
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10" />
@@ -320,46 +329,15 @@ project.execute(); // Let's win this!
                 <span className="text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)]">project-details.md</span>
               </div>
 
-              <h3 className="text-2xl font-bold mb-6 text-[#e6edf3] font-[family-name:var(--font-geist-mono)]">
-                <span className="text-[#58a6ff]">#</span> Yapay Zeka Çözümümüz
-              </h3>
               
               <div className="text-[#8b949e] space-y-4 markdown-content font-[family-name:var(--font-geist-mono)]">
-                <p>
-                  Projemiz, modern yapay zeka teknolojilerini kullanarak karmaşık problemlere yenilikçi çözümler 
-                  sunmayı amaçlamaktadır. Derin öğrenme modelleri ve veri analizi teknikleri ile kullanıcılara 
-                  özelleştirilmiş deneyimler sunuyoruz.
-                </p>
-                <p>
-                  İzmir Katip Çelebi Üniversitesi&apos;nde düzenlenen bu hackathona takımımız ile katılarak, 
-                  yeteneklerimizi sergilemek ve projemizi geliştirmek için çalışıyoruz.
-                </p>
-                
-                <div className="mt-6 bg-[#0d1117] p-4 rounded-md overflow-x-auto">
-                  <pre className="text-sm font-[family-name:var(--font-geist-mono)]"><code>{`// Temel AI modelimizin özeti
-const aiModel = {
-  type: "transformer",
-  layers: 12,
-  attention_heads: 8,
-  training_data: "custom_dataset",
-  fine_tuning: true,
-  
-  inference: (input) => {
-    // Projemizin çekirdek fonksiyonalitesi
-    return processData(input);
-  }
-}`}</code></pre>
+              <div className="mt-6">
+                  <h4 className="text-xl font-semibold text-[#e6edf3] mb-2 font-[family-name:var(--font-geist-mono)]">Amaç:</h4>
+                  <p>Göğüs röntgen görüntülerinden pnömoni gibi akciğer hastalıklarını otomatik olarak tanılayabilen, kararlarını açıklayabilen ve bu çıktıları anlamlı bir klinik rapor haline getirebilen yapay zeka sistemleri geliştirmektir.</p>
                 </div>
-                
-                <div className="mt-6">
-                  <h4 className="text-xl font-semibold text-[#e6edf3] mb-2 font-[family-name:var(--font-geist-mono)]">Proje Hedefleri:</h4>
-                  <ul className="list-disc list-inside space-y-1 ml-2">
-                    <li>Veri analizinde %40 performans artışı sağlamak</li>
-                    <li>Kullanıcı deneyimini optimize etmek</li>
-                    <li>Gerçek zamanlı tahminleme kabiliyeti geliştirmek</li>
-                    <li>Karar destek sistemlerini iyileştirmek</li>
-                  </ul>
-                </div>
+                <p>
+                  Modelimizi eğitmek için <a href="https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia/data" target="_blank" rel="noopener noreferrer" className="text-[#58a6ff] hover:underline">Kaggle'daki Pnömoni Teşhisi için Göğüs Röntgeni</a> veri setini kullandık. Bu veri seti, Guangzhou Kadın ve Çocuk Sağlığı Merkezi'ndeki 1-5 yaş arası pediyatrik hastalara ait 5,863 adet Pnömoni ve Normal olarak sınıflandırılmış göğüs röntgeni (JPEG) görüntüsünden oluşmaktadır. Otomatik pnömoni tespiti için model geliştirme ve test etme amacıyla tasarlanmıştır.
+                </p>
               </div>
             </motion.div>
             
@@ -370,98 +348,318 @@ const aiModel = {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="md:col-span-2"
             >
-              <div className="relative h-full w-full rounded-xl overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1117] via-transparent to-transparent z-10" />
-                <Image
-                  src="/project-image.jpg"
-                  alt="Proje Görseli"
-                  width={600}
-                  height={400}
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1117] via-[#0d1117]/50 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <span className="bg-[#1f6feb]/80 text-xs font-mono py-1 px-2 rounded text-white font-[family-name:var(--font-geist-mono)]">AI-POWERED DASHBOARD</span>
-                  <h3 className="text-xl font-bold mt-2 text-white font-[family-name:var(--font-geist-mono)]">Yapay Zeka Destekli Analiz</h3>
-                  <p className="text-[#8b949e] text-sm font-[family-name:var(--font-geist-mono)]">Modern teknolojilerle veri analizi ve öngörü sistemleri</p>
-                </div>
+              {/* New Subsection for Model Explanations */}
+              <div className="mb-8 bg-[#161b22] rounded-lg border border-[#30363d] p-6 shadow-lg">
+              <div className="flex items-center mb-4">
+                <div className="w-3 h-3 rounded-full bg-[#ff5f56] mr-2"></div>
+                <div className="w-3 h-3 rounded-full bg-[#ffbd2e] mr-2"></div>
+                <div className="w-3 h-3 rounded-full bg-[#27c93f] mr-4"></div>
+                <span className="text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)]">model-architectures.md</span>
               </div>
-              
-              <div className="bg-[#161b22] rounded-lg border border-[#30363d] p-4 shadow-lg">
-                <h4 className="text-lg font-bold mb-3 text-[#e6edf3] flex items-center font-[family-name:var(--font-geist-mono)]">
-                  <svg className="w-5 h-5 mr-2 text-[#58a6ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  Tech Stack
+                 <h4 className="text-xl font-semibold text-[#e6edf3] mb-4 font-[family-name:var(--font-geist-mono)] flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#58a6ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                    Model Mimarileri
                 </h4>
-                <div className="grid grid-cols-2 gap-2 text-sm">
-                  <div className="flex items-center p-2 rounded bg-[#0d1117]">
-                    <span className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
-                    <span className="text-[#e6edf3] font-[family-name:var(--font-geist-mono)]">Python</span>
+                <div className="mb-6">
+                  <h5 className="text-lg font-semibold text-[#c9d1d9] mb-2 font-[family-name:var(--font-geist-mono)]">ShuffleNet V2</h5>
+                  <p className="text-sm text-[#8b949e] mb-3 font-[family-name:var(--font-geist-mono)]">
+                    Hesaplama açısından verimli olacak şekilde tasarlanmış, özellikle mobil cihazlar için uygun olan hafif bir CNN mimarisidir. Kanal karıştırma (channel shuffle) operasyonunu kullanır.
+                  </p>
+                  <div className="relative border border-[#30363d] rounded-lg overflow-hidden aspect-video bg-[#0d1117]">
+                    <Image src="/shufflenet.jpeg" alt="ShuffleNet V2 Mimarisi" layout="fill" objectFit="cover" className="opacity-80" />
+                    <p className="absolute bottom-1 left-2 bg-black/50 px-1 py-0.5 text-xs rounded">ShuffleNet V2</p>
                   </div>
-                  <div className="flex items-center p-2 rounded bg-[#0d1117]">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                    <span className="text-[#e6edf3] font-[family-name:var(--font-geist-mono)]">TensorFlow</span>
-                  </div>
-                  <div className="flex items-center p-2 rounded bg-[#0d1117]">
-                    <span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
-                    <span className="text-[#e6edf3] font-[family-name:var(--font-geist-mono)]">PyTorch</span>
-                  </div>
-                  <div className="flex items-center p-2 rounded bg-[#0d1117]">
-                    <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                    <span className="text-[#e6edf3] font-[family-name:var(--font-geist-mono)]">React</span>
-                  </div>
-                  <div className="flex items-center p-2 rounded bg-[#0d1117]">
-                    <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                    <span className="text-[#e6edf3] font-[family-name:var(--font-geist-mono)]">GraphQL</span>
-                  </div>
-                  <div className="flex items-center p-2 rounded bg-[#0d1117]">
-                    <span className="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
-                    <span className="text-[#e6edf3] font-[family-name:var(--font-geist-mono)]">MongoDB</span>
+                </div>
+                <div>
+                  <h5 className="text-lg font-semibold text-[#c9d1d9] mb-2 font-[family-name:var(--font-geist-mono)]">EfficientNet-B0</h5>
+                   <p className="text-sm text-[#8b949e] mb-3 font-[family-name:var(--font-geist-mono)]">
+                    Model ölçeklendirme (genişlik, derinlik, çözünürlük) için bileşik bir katsayı kullanarak yüksek doğruluk ve verimlilik dengesi sağlayan bir model ailesidir. B0 en temel versiyonudur.
+                  </p>
+                  <div className="relative border border-[#30363d] rounded-lg overflow-hidden aspect-video bg-[#0d1117]">
+                    <Image src="/efficientnet.png" alt="EfficientNet-B0 Mimarisi" layout="fill" objectFit="contain" className="opacity-80" />
+                    <p className="absolute bottom-1 left-2 bg-black/50 px-1 py-0.5 text-xs rounded">EfficientNet-B0</p>
                   </div>
                 </div>
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
 
+      {/* Results Section */}
+      <section id="results" className="py-20 px-4 relative border-t border-[#30363d] mt-16">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10" />
+        <div className="max-w-6xl mx-auto relative z-10">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-16"
+          >
+            <div className="flex items-center mb-6">
+              <div className="h-px flex-grow bg-[#30363d]"></div>
+              <h2 className="text-3xl font-bold mx-4 text-[#58a6ff] font-[family-name:var(--font-geist-mono)]">
+                <span className="text-[#e6edf3] font-[family-name:var(--font-geist-mono)]">{"//"}</span> Hackathon.results
+              </h2>
+              <div className="h-px flex-grow bg-[#30363d]"></div>
+            </div>
+            <p className="text-xl text-[#8b949e] max-w-3xl mx-auto text-center font-[family-name:var(--font-geist-mono)]">
+              Göğüs röntgenlerinden pnömoni analizi için geliştirdiğimiz çözümlerin sonuçları
+            </p>
+          </motion.div>
+
+          {/* Task 1: Classification */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-16"
+            className="mb-16 bg-[#161b22] rounded-lg border border-[#30363d] p-6 shadow-lg"
           >
-            <h3 className="text-2xl font-bold mb-10 text-center text-[#e6edf3] flex items-center justify-center font-[family-name:var(--font-geist-mono)]">
-              <svg className="w-6 h-6 mr-2 text-[#58a6ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-              </svg>
-              <span>Teknolojilerimiz</span>
+            <div className="flex items-center mb-4">
+                <div className="w-3 h-3 rounded-full bg-[#ff5f56] mr-2"></div>
+                <div className="w-3 h-3 rounded-full bg-[#ffbd2e] mr-2"></div>
+                <div className="w-3 h-3 rounded-full bg-[#27c93f] mr-4"></div>
+                <span className="text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)]">task-1.md</span>
+              </div>
+            <h3 className="text-2xl font-bold mb-4 text-[#e6edf3] font-[family-name:var(--font-geist-mono)] flex items-center">
+              <span className="text-[#58a6ff] mr-2">1.</span> Görev: Hastalık Sınıflandırması
             </h3>
+            <p className="text-[#8b949e] mb-6 font-[family-name:var(--font-geist-mono)]">
+              Amaç: Göğüs röntgeni görüntülerini otomatik olarak NORMAL veya PNÖMONİ olarak sınıflandırmak. Bu görev için <code className="bg-[#0d1117] px-1 py-0.5 rounded text-sm text-amber-400">ShuffleNet V2 x1.0</code> ve <code className="bg-[#0d1117] px-1 py-0.5 rounded text-sm text-amber-400">EfficientNet-B0</code> modelleri kullanıldı. Görüntüler yeniden boyutlandırıldı, normalize edildi ve veri artırımı (örn. yatay çevirme, döndürme) uygulandı.
+            </p>
+              <h4 className="text-md font-semibold text-[#e6edf3] mb-2 font-[family-name:var(--font-geist-mono)]">Kullanılan Hiperparametreler:</h4>
+            <div className="mb-6 bg-[#0d1117] p-4 rounded-md overflow-x-auto border border-[#30363d]">
+              <pre className="text-sm font-[family-name:var(--font-geist-mono)] text-[#8b949e]"><code>{`# Hyperparameters
+batch_size = 32
+num_epochs = 20
+learning_rate = 0.001
+
+# Models Trained
+models = [
+  models.shufflenet_v2_x1_0,
+  models.efficientnet_b0
+]
+
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")`}</code></pre>
+            </div>
+            <h4 className="text-md font-semibold text-[#e6edf3] mb-3 font-[family-name:var(--font-geist-mono)]">Performans Metrikleri (Test Seti):</h4>
+            {/* Updated Metrics Table */}
+            <div className="overflow-x-auto bg-[#0d1117] rounded-lg border border-[#30363d]">
+              <table className="min-w-full text-sm font-[family-name:var(--font-geist-mono)]">
+                <thead className="bg-[#161b22] text-left text-[#8b949e]">
+                  <tr>
+                    <th className="px-4 py-2 font-semibold">Model</th>
+                    <th className="px-4 py-2 font-semibold text-center">Precision</th>
+                    <th className="px-4 py-2 font-semibold text-center">Recall</th>
+                    <th className="px-4 py-2 font-semibold text-center">F1-Score</th>
+                    <th className="px-4 py-2 font-semibold text-center">ROC-AUC</th>
+                    <th className="px-4 py-2 font-semibold text-center">IOU</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#30363d]">
+                  <tr className="text-[#e6edf3]">
+                    <td className="px-4 py-2 font-medium">ShuffleNet V2 x1.0</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.941</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">1</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.969</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.991</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.941</td>{/* Placeholder */}
+                  </tr>
+                  <tr className="text-[#e6edf3] bg-[#161b22]/30">
+                    <td className="px-4 py-2 font-medium">EfficientNet-B0</td><td className="px-4 py-2 text-center text-[#58a6ff]">0.92</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.95</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.93</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.97</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0.88</td>{/* Placeholder */}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+             {/* Download Link for Task 1 */}
+            <div className="mt-6 text-center">
+              <a 
+                href="/downloads/task1_classification.json" 
+                download
+                className="inline-flex items-center text-sm font-medium text-[#58a6ff] hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#58a6ff] font-[family-name:var(--font-geist-mono)]"
+              >
+                <svg className="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                task1_classification.json
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Task 2: Explainability (XAI) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-16 bg-[#161b22] rounded-lg border border-[#30363d] p-6 shadow-lg"
+          >
+            <div className="flex items-center mb-4">
+                <div className="w-3 h-3 rounded-full bg-[#ff5f56] mr-2"></div>
+                <div className="w-3 h-3 rounded-full bg-[#ffbd2e] mr-2"></div>
+                <div className="w-3 h-3 rounded-full bg-[#27c93f] mr-4"></div>
+                <span className="text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)]">task-2.md</span>
+              </div>
+            <h3 className="text-2xl font-bold mb-4 text-[#e6edf3] font-[family-name:var(--font-geist-mono)] flex items-center">
+              <span className="text-[#58a6ff] mr-2">2.</span> Görev: Açıklanabilirlik Haritası (XAI)
+            </h3>
+            <p className="text-[#8b949e] mb-6 font-[family-name:var(--font-geist-mono)]">
+              Modelimizin karar verirken odaklandığı bölgeleri gösteren <code className="bg-[#0d1117] px-1 py-0.5 rounded text-sm text-amber-400">Grad-CAM</code> ile üretilmiş açıklanabilirlik haritaları. Haritalar, orijinal görüntü üzerine bindirilerek potansiyel pnömoni bölgeleri vurgulanmıştır.
+            </p>
+            {/* Placeholder for XAI images - Replace with actual images */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="relative border border-[#30363d] rounded-lg overflow-hidden aspect-square bg-[#0d1117]">
+                 <Image src="/placeholder-xai-1.png" alt="Açıklanabilirlik Haritası 1" layout="fill" objectFit="contain" className="opacity-80" />
+                 <p className="absolute bottom-2 left-2 bg-black/50 px-2 py-1 text-xs rounded">NORMAL Örnek</p>
+              </div>
+              <div className="relative border border-[#30363d] rounded-lg overflow-hidden aspect-square bg-[#0d1117]">
+                 <Image src="/placeholder-xai-2.png" alt="Açıklanabilirlik Haritası 2" layout="fill" objectFit="contain" className="opacity-80" />
+                 <p className="absolute bottom-2 left-2 bg-black/50 px-2 py-1 text-xs rounded">PNÖMONİ Örnek (Sağ Alt Lob)</p>
+              </div>
+            </div>
+            <p className="text-xs text-[#8b949e] mt-2 text-center font-[family-name:var(--font-geist-mono)]">
+              <code>{"//"} Örnek açıklanabilirlik haritaları (gerçek çıktılarla değiştirilecek)</code>
+            </p>
+            {/* Download Link for Task 2 */}
+            <div className="mt-6 text-center space-y-2">
+               <p className="text-xs text-[#8b949e] font-[family-name:var(--font-geist-mono)]">
+                Görseller <code className="bg-[#0d1117] px-1 rounded text-xs text-gray-400">/downloads/task2_explainability/&lt;image&gt;_&lt;label&gt;.png</code> formatında bulunur.
+               </p>
+               <a 
+                href="/downloads/task2_metadata.json" 
+                download
+                className="inline-flex items-center text-sm font-medium text-[#58a6ff] hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#58a6ff] font-[family-name:var(--font-geist-mono)]"
+              >
+                <svg className="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                task2_metadata.json
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Task 3: Clinical Report & LLM Comparison */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-[#161b22] rounded-lg border border-[#30363d] p-6 shadow-lg"
+          >
+            <div className="flex items-center mb-4">
+                <div className="w-3 h-3 rounded-full bg-[#ff5f56] mr-2"></div>
+                <div className="w-3 h-3 rounded-full bg-[#ffbd2e] mr-2"></div>
+                <div className="w-3 h-3 rounded-full bg-[#27c93f] mr-4"></div>
+                <span className="text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)]">task-3.md</span>
+              </div>
+            <h3 className="text-2xl font-bold mb-4 text-[#e6edf3] font-[family-name:var(--font-geist-mono)] flex items-center">
+              <span className="text-[#58a6ff] mr-2">3.</span> Görev: Klinik Raporlama ve LLM Karşılaştırması
+            </h3>
+            <p className="text-[#8b949e] mb-6 font-[family-name:var(--font-geist-mono)]">
+              Sınıflandırma ve açıklanabilirlik sonuçlarına dayanarak otomatik oluşturulan klinik mini raporlar ve bu raporların <code className="bg-[#0d1117] px-1 py-0.5 rounded text-sm text-amber-400">Gemini Pro</code> gibi bir LLM çıktısıyla karşılaştırılması.
+            </p>
             
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              {techs.map((tech, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ y: 20, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 * index, duration: 0.5 }}
-                  whileHover={{ y: -10, scale: 1.03 }}
-                  className="bg-[#161b22] relative border border-[#30363d] p-6 rounded-lg shadow-lg overflow-hidden group"
-                >
-                  <div className="text-4xl mb-4">{tech.icon}</div>
-                  <h4 className="text-xl font-bold text-[#e6edf3] font-[family-name:var(--font-geist-mono)]">{tech.name}</h4>
-                  <div className="absolute -right-4 -bottom-4 w-24 h-24 rounded-full bg-gradient-to-br from-[#1f6feb]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </motion.div>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Generated Report Example */}
+              <div className="bg-[#0d1117] p-4 rounded-lg border border-[#30363d]">
+                <h4 className="text-lg font-semibold text-[#e6edf3] mb-2 font-[family-name:var(--font-geist-mono)]">Örnek Otomatik Rapor</h4>
+                <p className="text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)] mb-1"><strong className="text-[#e6edf3]">Tanı:</strong> Pnömoni bulguları saptanmıştır.</p>
+                <p className="text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)] mb-1"><strong className="text-[#e6edf3]">Anatomik Bölge:</strong> Sağ alt lobda belirgin opasite izlenmektedir.</p>
+                <p className="text-sm text-[#8b949e] font-[family-name:var(--font-geist-mono)]"><strong className="text-[#e6edf3]">Risk:</strong> Yüksek</p>
+              </div>
+
+              {/* LLM Comparison Metrics */}
+              <div className="bg-[#0d1117] p-4 rounded-lg border border-[#30363d]">
+                 <h4 className="text-lg font-semibold text-[#e6edf3] mb-3 font-[family-name:var(--font-geist-mono)]">LLM Karşılaştırma Skorları (Örnek)</h4>
+                 <div className="space-y-2">
+                   <div className="flex justify-between items-center text-sm">
+                     <span className="text-[#8b949e] font-[family-name:var(--font-geist-mono)]">BLEU:</span>
+                     <span className="text-[#58a6ff] font-bold font-[family-name:var(--font-geist-mono)]">0.65</span> {/* Placeholder */}
+                   </div>
+                   <div className="flex justify-between items-center text-sm">
+                     <span className="text-[#8b949e] font-[family-name:var(--font-geist-mono)]">ROUGE-L:</span>
+                     <span className="text-[#58a6ff] font-bold font-[family-name:var(--font-geist-mono)]">0.72</span> {/* Placeholder */}
+                   </div>
+                   <div className="flex justify-between items-center text-sm">
+                     <span className="text-[#8b949e] font-[family-name:var(--font-geist-mono)]">BERTScore (F1):</span>
+                     <span className="text-[#58a6ff] font-bold font-[family-name:var(--font-geist-mono)]">0.88</span> {/* Placeholder */}
+                   </div>
+                 </div>
+              </div>
+            </div>
+             <p className="text-xs text-[#8b949e] mt-4 text-center font-[family-name:var(--font-geist-mono)]">
+              <code>{"//"} Raporlama ve karşılaştırma metrikleri örnektir (gerçek çıktılarla değiştirilecek)</code>
+            </p>
+            {/* Download Link for Task 3 */}
+            <div className="mt-6 text-center">
+              <a 
+                href="/downloads/task3_clinical_report.json" 
+                download
+                className="inline-flex items-center text-sm font-medium text-[#58a6ff] hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#58a6ff] font-[family-name:var(--font-geist-mono)]"
+              >
+                <svg className="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                task3_clinical_report.json
+              </a>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <TeamSection />
+      {/* PDF Presentation Section - Rendered only on client */}
+      <section id="presentation" className="py-20 px-4 relative border-t border-[#30363d]">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10" />
+        <div className="max-w-6xl mx-auto relative z-10">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-16"
+          >
+            <div className="flex items-center mb-6">
+              <div className="h-px flex-grow bg-[#30363d]"></div>
+              <h2 className="text-3xl font-bold mx-4 text-[#58a6ff] font-[family-name:var(--font-geist-mono)]">
+                <span className="text-[#e6edf3] font-[family-name:var(--font-geist-mono)]">{"//"}</span> Presentation.pdf
+              </h2>
+              <div className="h-px flex-grow bg-[#30363d]"></div>
+            </div>
+             <p className="text-xl text-[#8b949e] max-w-3xl mx-auto text-center font-[family-name:var(--font-geist-mono)]">
+              Proje sunumumuz
+            </p>
+          </motion.div>
 
+          {/* PDF Embed - Conditional rendering */}
+          {hasMounted && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }} // Changed whileInView to animate for entry
+              transition={{ duration: 0.6 }}
+              className="bg-[#161b22] rounded-lg border border-[#30363d] p-2 shadow-lg overflow-hidden"
+            >
+              <iframe 
+                src="/projectpdf.pdf" 
+                className="w-full h-[70vh] md:h-[80vh] rounded"
+                title="Proje Sunumu PDF"
+                // Adding sandbox attribute for security, adjust as needed
+                // sandbox="allow-scripts allow-same-origin"
+              >
+                {/* Fallback content is now less likely to cause hydration issues */}
+                Tarayıcınız PDF görüntülemeyi desteklemiyor. 
+                <a href="/projectpdf.pdf" className="text-[#58a6ff] hover:underline">Sunumu buradan indirebilirsiniz</a>.
+              </iframe>
+            </motion.div>
+          )}
+          {!hasMounted && (
+            // Optional: Placeholder while waiting for mount
+            <div className="bg-[#161b22] rounded-lg border border-[#30363d] p-2 shadow-lg h-[70vh] md:h-[80vh] flex items-center justify-center text-[#8b949e]">
+              Yükleniyor...
+            </div>
+           ) }
+        </div>
+      </section>
 
       <motion.p
         initial={{ opacity: 0 }}
@@ -492,7 +690,7 @@ const aiModel = {
       {/* Footer */}
       <footer className="bg-black py-12 px-4 border-t border-gray-900">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="text-gray-500 mb-4">© 2023 IKC is All You Need! - İzmir Katip Çelebi Üniversitesi AI Hackathon Takımı</p>
+          <p className="text-gray-500 mb-4">© 2025 IKC is All You Need! - İzmir Katip Çelebi Üniversitesi AI Hackathon Takımı</p>
           <p className="text-purple-500">
             <a href="#" className="hover:text-purple-400 transition-colors">İletişim</a>
           </p>
