@@ -259,8 +259,7 @@ project.execute(); // Let's win this!
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-base md:text-lg text-[#8b949e] mb-8 md:mb-12 max-w-2xl mx-auto font-[family-name:var(--font-geist-mono)]"
           >
-            Kod tutkunlarından oluşan ekibimiz, İzmir Katip Çelebi Üniversitesi yapay zeka hackathonunda 
-            yenilikçi çözümler geliştiriyor. Teknoloji ekibimiz ve projemiz ile tanışın.
+            Kod tutkunlarından oluşan ekibimiz ve projemiz ile tanışın.
           </motion.p>
 
           <div
@@ -319,9 +318,6 @@ project.execute(); // Let's win this!
               </h2>
               <div className="h-px flex-grow bg-[#30363d]"></div>
             </div>
-            <p className="text-lg md:text-xl text-[#8b949e] max-w-3xl mx-auto text-center font-[family-name:var(--font-geist-mono)]">
-              Yapay zeka teknolojileri ile geliştirdiğimiz inovatif çözümümüz
-            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8 items-start mb-16 md:mb-20">
@@ -545,8 +541,8 @@ models = [
                     <th className="px-2 md:px-4 py-2 font-semibold text-center">Precision</th>
                     <th className="px-2 md:px-4 py-2 font-semibold text-center">Recall</th>
                     <th className="px-2 md:px-4 py-2 font-semibold text-center">F1</th>
-                    <th className="px-2 md:px-4 py-2 font-semibold text-center hidden md:table-cell">ROC-AUC</th>
-                    <th className="px-2 md:px-4 py-2 font-semibold text-center hidden md:table-cell">IOU</th>
+                    <th className="px-2 md:px-4 py-2 font-semibold text-center">ROC-AUC</th>
+                    <th className="px-2 md:px-4 py-2 font-semibold text-center">IOU</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#30363d]">
@@ -617,16 +613,15 @@ models = [
                     <th className="px-4 py-2 font-semibold text-center">Precision</th>
                     <th className="px-4 py-2 font-semibold text-center">Recall</th>
                     <th className="px-4 py-2 font-semibold text-center">F1-Score</th>
-                    <th className="px-4 py-2 font-semibold text-center">ROC-AUC</th>
-                    <th className="px-4 py-2 font-semibold text-center">IOU</th>
+                    <th className="px-4 py-2 font-semibold text-center"></th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#30363d]">
                   <tr className="text-[#e6edf3]">
-                    <td className="px-4 py-2 font-medium">EfficientNet-B0</td><td className="px-4 py-2 text-center text-[#58a6ff]">0,987</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,75 </td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,667</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,5</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,555</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]"></td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]"></td>{/* Placeholder */}
+                    <td className="px-4 py-2 font-medium">EfficientNet-B0</td><td className="px-4 py-2 text-center text-[#58a6ff]">0,987</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,75 </td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,667</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,5</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,555</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]"></td>
                   </tr>
                   <tr className="text-[#e6edf3] bg-[#161b22]/30">
-                    <td className="px-4 py-2 font-medium">ShuffleNet V2</td><td className="px-4 py-2 text-center text-[#58a6ff]">0,975</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,563 </td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,6666666667</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,375</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,4444444444</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]"></td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]"></td>{/* Placeholder */}
+                    <td className="px-4 py-2 font-medium">ShuffleNet V2</td><td className="px-4 py-2 text-center text-[#58a6ff]">0,975</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,563 </td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,667</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,375</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]">0,444</td>{/* Placeholder */}<td className="px-4 py-2 text-center text-[#58a6ff]"></td>
                   </tr>
                 </tbody>
               </table>

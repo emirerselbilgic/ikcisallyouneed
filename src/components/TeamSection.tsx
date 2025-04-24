@@ -75,7 +75,7 @@ export default function TeamSection() {
     {
       name: "Batu Arıbakır",
       role: "Yapay Zeka Mühendisi",
-      description: "Figure designing and research.",
+      description: "Figure designing and research. Special focus on image processing and medical image analysis",
       image: "/batu.jpeg",
       cv: {
         education: [
@@ -83,9 +83,10 @@ export default function TeamSection() {
 
         ],
         experience: [
+          "TÜBİTAK 2209-A Project Manager, Mar 2025 – Present"
         ],
         projects: [
-
+          "Repo-CT: AI-Driven Automated Diagnosis and Reporting System for Computed Tomography Images"
         ]
       }
     },
