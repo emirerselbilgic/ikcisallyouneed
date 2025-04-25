@@ -41,8 +41,14 @@ export default function TeamSection() {
 
         ],
         experience: [
+          "TUBITAK 2247 C Internship - Kişiselleştirilmiş Spor için Kritik Egzersiz Biyobelirteçlerinin Minimal invazif Kolorimetrik Ölçümünde Yapay Zeka Destekli Giyilebilir Bir Sensör Sisteminin Geliştirilmesi",
         ],
         projects: [
+          "TÜBİTAK 2242 (First Place in Turkey) - Yapay Zekâ Destekli Giyilebilir Mobil Asistan: Görüntü ve Video Tasviri için Doğal Dil İşleme Yaklaşımı",
+          "TÜBİTAK 2209 A - Yapay Zekâ Destekli Video Altyazılama ile Görme Engelli Bireyler için Android Uygulama",
+          "TÜBİTAK 2209 B - Prorad Akciğer: Otomatik Akciğer Röntgeni Analizi ve Rapor Üretimi için Yapay Zekâ Destekli Masaüstü Uygulaması",
+          "TÜSEB-B1 - Türk Adölesanlarda Android Tabanlı Besin Tüketim Sıklığı Anketi ve Diyet Kalite İndeksinin Geliştirilmesi"
+
         ]
       }
     },
